@@ -546,6 +546,37 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1674497498
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1674497499}
+  m_Layer: 0
+  m_Name: BallistaBarrel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1674497499
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1674497498}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 1.039}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1861344380}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1861344379
 GameObject:
   m_ObjectHideFlags: 0
@@ -558,6 +589,7 @@ GameObject:
   - component: {fileID: 1861344383}
   - component: {fileID: 1861344382}
   - component: {fileID: 1861344381}
+  - component: {fileID: 1861344384}
   m_Layer: 0
   m_Name: Head
   m_TagString: Untagged
@@ -576,7 +608,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0.472, z: 0.689}
   m_LocalScale: {x: 0.38, y: 0.38, z: 0.38}
   m_ConstrainProportionsScale: 1
-  m_Children: []
+  m_Children:
+  - {fileID: 1674497499}
   m_Father: {fileID: 1880581509}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -643,6 +676,23 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1861344379}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1861344384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1861344379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 578a509e067d85b438d238097dd1e4bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Barrel: {fileID: 1674497499}
+  m_WieldSocket: {fileID: 1674497499}
+  m_CooldownTime: 1
+  m_ProjectilePrefab: {fileID: 5341572413338962505, guid: 252388f6b1b645f44af9c045554e14cc,
+    type: 3}
 --- !u!1 &1880581505
 GameObject:
   m_ObjectHideFlags: 0
@@ -785,3 +835,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PlayerInput: {fileID: 1880581511}
   m_PlayerMotor: {fileID: 1880581510}
+  m_SpittingBallista: {fileID: 1861344384}
