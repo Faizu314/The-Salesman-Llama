@@ -13,8 +13,13 @@ public class PlayerInput : MonoBehaviour
         m_GlobalInput.PlayerMovement.Enable();
     }
 
-    public Vector2 GetMovementDir() {
-        return m_GlobalInput.PlayerMovement.MovementDir.ReadValue<Vector2>();
+    public Vector2 GetMovementDir(Vector3 playerPosition, Camera playerCam) {
+        var inputDir = m_GlobalInput.PlayerMovement.MovementDir.ReadValue<Vector2>();
+        Quaternion inputRot = Quaternion.FromToRotation(Vector3.forward, new(inputDir.x, 0f, inputDir.z));
+        Vector3 camToPlayer = playerPosition - playerCam.transform.position;
+        Vector2 camForward = new(camToPlayer.x, camToPlayer.z);
+
+        return inputRot * camForward;
     }
 
     /// <param name="baseRotDir">This is a vector on the xz plane which defines the direction the player is looking at when its rotation is 0.</param>
