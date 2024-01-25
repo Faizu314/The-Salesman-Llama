@@ -1,5 +1,12 @@
 {
   "dependencies": {
+    "com.phezu.util": {
+      "version": "https://github.com/Faizu314/Phezu.git?path=/Assets/com.phezu.util",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "d44fe3634b7028dfee94130d5ab9f1da1daf83d9"
+    },
     "com.unity.burst": {
       "version": "1.8.11",
       "depth": 1,
@@ -46,6 +53,15 @@
       "depth": 0,
       "source": "registry",
       "dependencies": {},
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.inputsystem": {
+      "version": "1.7.0",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.modules.uielements": "1.0.0"
+      },
       "url": "https://packages.unity.com"
     },
     "com.unity.mathematics": {
