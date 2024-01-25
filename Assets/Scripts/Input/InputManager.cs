@@ -1,18 +1,16 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+using Phezu.Util;
 
-public class InputManager : MonoBehaviour
+public class InputManager : Singleton<InputManager>
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    private GameInput m_GameInput;
+    public GameInput GlobalInput => m_GameInput;
+
+    private void Awake() {
+        m_GameInput = new();
+        m_GameInput.Enable();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    protected override void OnDestroy() {
+        m_GameInput.Disable();
     }
 }
