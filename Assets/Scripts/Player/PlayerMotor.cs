@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class PlayerMotor : MonoBehaviour
 {
-    public Vector3 Velocity;
+    public Vector3 VelocityDir;
+    public float Speed;
     public float Rotation;
 
     private Transform m_Transform;
@@ -16,7 +17,7 @@ public class PlayerMotor : MonoBehaviour
         rot.y = Rotation;
         m_Transform.rotation = Quaternion.Euler(rot);
 
-        m_Transform.position += Velocity * Time.deltaTime;
+        m_Transform.position += VelocityDir * Speed * Time.deltaTime;
     }
 
 }
