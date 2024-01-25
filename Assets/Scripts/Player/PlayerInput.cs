@@ -13,7 +13,7 @@ public class PlayerInput : MonoBehaviour
         m_GlobalInput.PlayerMovement.Enable();
     }
 
-    public Vector3 GetMovementDir(Vector3 playerPosition, Camera playerCam) {
+    public Vector3 GetMovementDir(Camera playerCam) {
         var inputDir = m_GlobalInput.PlayerMovement.MovementDir.ReadValue<Vector2>();
 
         Quaternion inputRot = Quaternion.FromToRotation(Vector3.forward, new(inputDir.x, 0f, inputDir.y));

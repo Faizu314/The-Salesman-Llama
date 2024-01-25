@@ -7,7 +7,6 @@ public class InputManager : Singleton<InputManager>
 
     private void Awake() {
         m_GameInput = new();
-        m_GameInput.Enable();
     }
 
     protected override void OnDestroy() {
