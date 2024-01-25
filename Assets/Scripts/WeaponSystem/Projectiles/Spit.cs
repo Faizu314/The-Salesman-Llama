@@ -10,6 +10,6 @@ public class Spit : BaseProjectile
     }
 
     protected override IMoveStrategy GetMoveStrategy() {
-        return new DefaultTravelStrategy(m_Speed, GetComponent<Rigidbody>());
+        return new DefaultMoveStrategy(m_Speed, GetComponent<Rigidbody>());
     }
 }
