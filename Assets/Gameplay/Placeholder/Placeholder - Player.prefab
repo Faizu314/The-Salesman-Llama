@@ -134,6 +134,7 @@ MonoBehaviour:
   m_PlayerInput: {fileID: 3031333426732388769}
   m_PlayerMotor: {fileID: 3031333426732388768}
   m_Thrower: {fileID: 7151657042281682747}
+  m_SpitCooldown: 0.5
 --- !u!114 &3031333426732388769
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -158,6 +159,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e06dc0a9c94bb049a7c83a0d20d7001, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_PlayerBounds: {fileID: 0}
   VelocityDir: {x: 0, y: 0, z: 0}
   Speed: 5
   Rotation: 0
