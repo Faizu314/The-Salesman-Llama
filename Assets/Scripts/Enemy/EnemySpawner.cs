@@ -7,9 +7,10 @@ using UnityEngine.Pool;
 
 public class EnemySpawner : MonoBehaviour
 {
-    [SerializeField] Transform m_spawnPoint;
-    [SerializeField] Transform m_destinationPoint;
+    [SerializeField] BoxCollider m_spawnBox;
     [SerializeField] Enemy m_enemyPrefab;
+    [SerializeField] int m_delayMin;
+    [SerializeField] int m_delayMax;
 
     ObjectPool<Enemy> m_enemyPool;
 
@@ -31,7 +32,9 @@ public class EnemySpawner : MonoBehaviour
 
     private void OnGet(Enemy instance)
     {
-        instance.Init(m_spawnPoint, m_destinationPoint.position);
+        float x = m_spawnBox.transform.position.x + m_spawnBox.center.x + Random.Range(-m_spawnBox.bounds.extents.x, m_spawnBox.bounds.extents.x);
+        Vector3 pos = new Vector3(x, 0, m_spawnBox.transform.position.z);
+        instance.Init(pos, m_spawnBox.transform.rotation);
         instance.gameObject.SetActive(true);
         instance.transform.SetParent(transform, true);
     }
@@ -52,7 +55,7 @@ public class EnemySpawner : MonoBehaviour
         while (!token.IsCancellationRequested)
         {
             m_enemyPool.Get();
-            await UniTask.Delay(Random.Range(500, 2000), cancellationToken: token);
+            await UniTask.Delay(Random.Range(m_delayMin, m_delayMax), cancellationToken: token);
         }
     }
 }
