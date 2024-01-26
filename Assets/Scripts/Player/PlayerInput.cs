@@ -1,9 +1,11 @@
+using System;
 using UnityEngine;
 
 public class PlayerInput : MonoBehaviour
 {
-    private InputManager m_InputManager;
+    public Action OnSpitButtonPress;
 
+    private InputManager m_InputManager;
     private GameInput m_GlobalInput;
 
     private void Start() {
@@ -11,12 +13,18 @@ public class PlayerInput : MonoBehaviour
         m_GlobalInput = m_InputManager.GlobalInput;
 
         m_GlobalInput.PlayerMovement.Enable();
+        m_GlobalInput.PlayerButtons.Enable();
+
+        m_GlobalInput.PlayerButtons.Spit.performed += (x) => OnSpitButtonPress?.Invoke();
     }
 
     public Vector3 GetMovementDir(Camera playerCam) {
         var inputDir = m_GlobalInput.PlayerMovement.MovementDir.ReadValue<Vector2>();
 
-        Quaternion inputRot = Quaternion.FromToRotation(Vector3.forward, new(inputDir.x, 0f, inputDir.y));
+        if (inputDir.SqrMagnitude() == 0f)
+            return Vector3.zero;
+
+        Quaternion inputRot = Quaternion.LookRotation(Vector3.forward, Vector3.up) * Quaternion.LookRotation(new(inputDir.x, 0f, inputDir.y), Vector3.up);
         Vector3 camForward = playerCam.transform.forward;
         camForward.y = 0f;
         camForward.Normalize();
@@ -42,5 +50,6 @@ public class PlayerInput : MonoBehaviour
 
     private void OnDestroy() {
         m_GlobalInput.PlayerMovement.Disable();
+        m_GlobalInput.PlayerButtons.Disable();
     }
 }

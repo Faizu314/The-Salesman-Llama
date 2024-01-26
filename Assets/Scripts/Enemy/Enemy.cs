@@ -22,7 +22,7 @@ public class Enemy : MonoBehaviour
     {
         transform.position = startPos;
         transform.rotation = startRot;
-        Debug.Log(transform.forward);
+        //Debug.Log(transform.forward);
         m_destination = startPos + transform.forward * 20;
     }
 
