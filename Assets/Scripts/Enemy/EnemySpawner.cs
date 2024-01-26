@@ -3,114 +3,56 @@ using System.Collections.Generic;
 using UnityEngine;
 using Cysharp.Threading.Tasks;
 using System.Threading;
+using UnityEngine.Pool;
 
 public class EnemySpawner : MonoBehaviour
 {
-    [SerializeField] Transform[] m_spawnPoints;
-    [SerializeField] GameObject[] m_enemyPrefabs;
+    [SerializeField] Transform m_spawnPoint;
+    [SerializeField] Transform m_destinationPoint;
+    [SerializeField] Enemy m_enemyPrefab;
 
-    List<GameObject> m_slowEnemyPool;
-    List<GameObject> m_mediumEnemyPool;
-    List<GameObject> m_fastEnemyPool;
+    ObjectPool<Enemy> m_enemyPool;
 
-    CancellationToken slowToken;
-    CancellationToken mediumToken;
-    CancellationToken fastToken;
+    CancellationToken token;
 
     private void Awake()
     {
-        m_slowEnemyPool = new List<GameObject>();
-        m_mediumEnemyPool = new List<GameObject>();
-        m_fastEnemyPool = new List<GameObject>();
-
+        m_enemyPool = new ObjectPool<Enemy>(CreateEnemy, OnGet, OnRelease, null, false);
         StartSpawnEnemies();
+    }
+
+    private Enemy CreateEnemy()
+    {
+        Enemy instance = Instantiate(m_enemyPrefab);
+        instance.reachDestination += x => m_enemyPool.Release(x);
+        instance.gameObject.SetActive(false);
+        return instance;
+    }
+
+    private void OnGet(Enemy instance)
+    {
+        instance.Init(m_spawnPoint, m_destinationPoint.position);
+        instance.gameObject.SetActive(true);
+        instance.transform.SetParent(transform, true);
+    }
+
+    private void OnRelease(Enemy instance)
+    {
+        instance.gameObject.SetActive(false);
     }
 
     public void StartSpawnEnemies()
     {
-        slowToken = new CancellationToken();
-        SpawnSlowEnemies(slowToken).Forget();
-        mediumToken = new CancellationToken();
-        SpawnMediumEnemies(mediumToken).Forget();
-        fastToken = new CancellationToken();
-        SpawnFastEnemies(fastToken).Forget();
+        token = new CancellationToken();
+        SpawnEnemies(token).Forget();
     }
 
-    async UniTaskVoid SpawnSlowEnemies(CancellationToken token)
+    async UniTaskVoid SpawnEnemies(CancellationToken token)
     {
         while (!token.IsCancellationRequested)
         {
-            GameObject enemy = null;
-            for (int i = 0; i < m_slowEnemyPool.Count; i++)
-            {
-                if (!m_slowEnemyPool[i].activeSelf)
-                {
-                    enemy = m_slowEnemyPool[i];
-                    break;
-                }
-            }
-            if (enemy == null)
-            {
-                enemy = Instantiate(m_enemyPrefabs[0]);
-                m_slowEnemyPool.Add(enemy);
-            }
-            enemy.transform.position = m_spawnPoints[0].position;
-            enemy.transform.rotation = m_spawnPoints[0].rotation;
-            enemy.SetActive(true);
-
+            m_enemyPool.Get();
             await UniTask.Delay(Random.Range(500, 2000), cancellationToken: token);
-        }
-    }
-
-    async UniTaskVoid SpawnMediumEnemies(CancellationToken token)
-    {
-        while (!token.IsCancellationRequested)
-        {
-            GameObject enemy = null;
-            for (int i = 0; i < m_mediumEnemyPool.Count; i++)
-            {
-                if (!m_mediumEnemyPool[i].activeSelf)
-                {
-                    enemy = m_mediumEnemyPool[i];
-                    break;
-                }
-            }
-            if (enemy == null)
-            {
-                enemy = Instantiate(m_enemyPrefabs[1]);
-                m_mediumEnemyPool.Add(enemy);
-            }
-            enemy.transform.position = m_spawnPoints[1].position;
-            enemy.transform.rotation = m_spawnPoints[1].rotation;
-            enemy.SetActive(true);
-
-            await UniTask.Delay(Random.Range(1000, 2500), cancellationToken: token);
-        }
-    }
-
-    async UniTaskVoid SpawnFastEnemies(CancellationToken token)
-    {
-        while (!token.IsCancellationRequested)
-        {
-            GameObject enemy = null;
-            for (int i = 0; i < m_fastEnemyPool.Count; i++)
-            {
-                if (!m_fastEnemyPool[i].activeSelf)
-                {
-                    enemy = m_fastEnemyPool[i];
-                    break;
-                }
-            }
-            if (enemy == null)
-            {
-                enemy = Instantiate(m_enemyPrefabs[2]);
-                m_fastEnemyPool.Add(enemy);
-            }
-            enemy.transform.position = m_spawnPoints[2].position;
-            enemy.transform.rotation = m_spawnPoints[2].rotation;
-            enemy.SetActive(true);
-
-            await UniTask.Delay(Random.Range(1500, 3000), cancellationToken: token);
         }
     }
 }

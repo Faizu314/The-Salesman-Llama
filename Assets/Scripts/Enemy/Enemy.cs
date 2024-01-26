@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,23 +8,35 @@ public class Enemy : MonoBehaviour
 {
     [SerializeField] float m_speed;
     NavMeshAgent m_agent;
+    Vector3 m_destination;
+    float m_defaultSpeed;
+
+    public Action<Enemy> reachDestination;
+
+    public void Init(Transform start, Vector3 destination)
+    {
+        transform.position = start.position;
+        transform.rotation = start.rotation;
+        m_destination = destination;
+    }
 
     private void Awake()
     {
         m_agent = GetComponent<NavMeshAgent>();
+        m_defaultSpeed = m_agent.speed;
+        m_agent.speed = m_speed * m_defaultSpeed;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnEnable()
     {
-        m_agent.Move(Vector3.forward * m_agent.speed * m_speed * Time.deltaTime);
+        m_agent.SetDestination(m_destination);
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Obstacle"))
         {
-            gameObject.SetActive(false);
+            reachDestination?.Invoke(this);
         }
     }
 }
