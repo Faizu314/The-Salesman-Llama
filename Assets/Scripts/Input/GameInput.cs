@@ -114,6 +114,34 @@ public partial class @GameInput: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""PlayerButtons"",
+            ""id"": ""64ad374b-ce4b-4eba-a8da-a64b7c61daf8"",
+            ""actions"": [
+                {
+                    ""name"": ""Spit"",
+                    ""type"": ""Button"",
+                    ""id"": ""7b3bd4d0-f04b-4d9d-a0b0-9f0603e88e23"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""0693eacf-cb8f-4b0b-b60f-9195e4241294"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Spit"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": [
@@ -139,6 +167,9 @@ public partial class @GameInput: IInputActionCollection2, IDisposable
         m_PlayerMovement = asset.FindActionMap("PlayerMovement", throwIfNotFound: true);
         m_PlayerMovement_MovementDir = m_PlayerMovement.FindAction("MovementDir", throwIfNotFound: true);
         m_PlayerMovement_MousePosition = m_PlayerMovement.FindAction("MousePosition", throwIfNotFound: true);
+        // PlayerButtons
+        m_PlayerButtons = asset.FindActionMap("PlayerButtons", throwIfNotFound: true);
+        m_PlayerButtons_Spit = m_PlayerButtons.FindAction("Spit", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -250,6 +281,52 @@ public partial class @GameInput: IInputActionCollection2, IDisposable
         }
     }
     public PlayerMovementActions @PlayerMovement => new PlayerMovementActions(this);
+
+    // PlayerButtons
+    private readonly InputActionMap m_PlayerButtons;
+    private List<IPlayerButtonsActions> m_PlayerButtonsActionsCallbackInterfaces = new List<IPlayerButtonsActions>();
+    private readonly InputAction m_PlayerButtons_Spit;
+    public struct PlayerButtonsActions
+    {
+        private @GameInput m_Wrapper;
+        public PlayerButtonsActions(@GameInput wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Spit => m_Wrapper.m_PlayerButtons_Spit;
+        public InputActionMap Get() { return m_Wrapper.m_PlayerButtons; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(PlayerButtonsActions set) { return set.Get(); }
+        public void AddCallbacks(IPlayerButtonsActions instance)
+        {
+            if (instance == null || m_Wrapper.m_PlayerButtonsActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_PlayerButtonsActionsCallbackInterfaces.Add(instance);
+            @Spit.started += instance.OnSpit;
+            @Spit.performed += instance.OnSpit;
+            @Spit.canceled += instance.OnSpit;
+        }
+
+        private void UnregisterCallbacks(IPlayerButtonsActions instance)
+        {
+            @Spit.started -= instance.OnSpit;
+            @Spit.performed -= instance.OnSpit;
+            @Spit.canceled -= instance.OnSpit;
+        }
+
+        public void RemoveCallbacks(IPlayerButtonsActions instance)
+        {
+            if (m_Wrapper.m_PlayerButtonsActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IPlayerButtonsActions instance)
+        {
+            foreach (var item in m_Wrapper.m_PlayerButtonsActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_PlayerButtonsActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public PlayerButtonsActions @PlayerButtons => new PlayerButtonsActions(this);
     private int m_DesktopSchemeIndex = -1;
     public InputControlScheme DesktopScheme
     {
@@ -263,5 +340,9 @@ public partial class @GameInput: IInputActionCollection2, IDisposable
     {
         void OnMovementDir(InputAction.CallbackContext context);
         void OnMousePosition(InputAction.CallbackContext context);
+    }
+    public interface IPlayerButtonsActions
+    {
+        void OnSpit(InputAction.CallbackContext context);
     }
 }
