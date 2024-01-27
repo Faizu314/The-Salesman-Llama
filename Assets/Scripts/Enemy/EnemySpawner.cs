@@ -20,6 +20,10 @@ public class EnemySpawner : MonoBehaviour
     private void Awake()
     {
         m_enemyPool = new ObjectPool<Enemy>(CreateEnemy, OnGet, OnRelease, null, false);
+    }
+
+    private void Start()
+    {
         GameManager.Instance.gameStarted += StartSpawnEnemies;
         GameManager.Instance.gameOvered += StopSpawnEnemies;
     }
