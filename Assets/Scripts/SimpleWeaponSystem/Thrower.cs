@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.Pool;
 
 public class Thrower : MonoBehaviour {
@@ -8,6 +9,7 @@ public class Thrower : MonoBehaviour {
     [SerializeField] private Projectile m_SpitPrefab;
 
     private ObjectPool<Projectile> m_SpitPool;
+    private bool m_CanSpit = true;
 
     private void Start() {
         m_SpitPool = new(CreateProjectile, GetProjectile, ReleaseProjectile, defaultCapacity: 10, maxSize: 10);
@@ -27,8 +29,27 @@ public class Thrower : MonoBehaviour {
     }
 
     public void Spit() {
+        if (!m_CanSpit)
+            return;
+
         var proj = m_SpitPool.Get();
 
         proj.Shoot(m_SpitStartPoint.position, m_SpitStartPoint.forward, (x) => m_SpitPool.Release(x));
+
+        StartCoroutine(nameof(Cooldown_Co), proj.CooldownTime);
+    }
+
+    private IEnumerator Cooldown_Co(float cooldownTime) {
+        m_CanSpit = false;
+
+        yield return new WaitForSeconds(cooldownTime);
+
+        m_CanSpit = true;
+
+        OnCooldown();
+    }
+
+    private void OnCooldown() {
+        //play cooldown sound
     }
 }
