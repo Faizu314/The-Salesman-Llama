@@ -12,6 +12,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] float m_speedMin;
     [SerializeField] float m_speedMax;
     [SerializeField] float m_maxSpeedAllCharacters;
+    [SerializeField] int m_moneyToEarn;
     [SerializeField] GameObject[] m_characters;
     NavMeshAgent m_agent;
     Vector3 m_destination;
@@ -86,6 +87,7 @@ public class Enemy : MonoBehaviour
 
     private void OnReachedMax()
     {
+        OverlayUI.Instance.AddMoney(m_moneyToEarn);
         m_tokenSource = new CancellationTokenSource();
         OnFillReachedMax(m_tokenSource).Forget();
     }

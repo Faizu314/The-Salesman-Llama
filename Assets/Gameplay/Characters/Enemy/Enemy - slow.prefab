@@ -89,6 +89,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4643988008204005425, guid: 41f7d7f84b78d434f8eb5a6d8a2e39b5,
         type: 3}
+      propertyPath: m_moneyToEarn
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 4643988008204005425, guid: 41f7d7f84b78d434f8eb5a6d8a2e39b5,
+        type: 3}
       propertyPath: m_maxSpeedAllCharacters
       value: 2
       objectReference: {fileID: 0}
