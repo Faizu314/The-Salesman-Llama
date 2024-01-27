@@ -41,7 +41,7 @@ public class FModEvents : Singleton<FModEvents> {
     public EventReference GetEventReference(EventReferenceType type) {
         switch (type) {
             case EventReferenceType.Ambience:
-                return Ambience:
+                return Ambience;
             case EventReferenceType.MainMenuTheme:
                 return MainMenuTheme;
             case EventReferenceType.BackgroundMusic:
