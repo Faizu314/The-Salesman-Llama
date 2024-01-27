@@ -4,6 +4,7 @@ using UnityEngine;
 public class PlayerInput : MonoBehaviour
 {
     public Action OnSpitButtonPress;
+    public Action OnSpecialButtonPress;
 
     private InputManager m_InputManager;
     private GameInput m_GlobalInput;
@@ -16,6 +17,7 @@ public class PlayerInput : MonoBehaviour
         m_GlobalInput.PlayerButtons.Enable();
 
         m_GlobalInput.PlayerButtons.Spit.performed += (x) => OnSpitButtonPress?.Invoke();
+        m_GlobalInput.PlayerButtons.SpecialAttack.performed += (x) => OnSpecialButtonPress?.Invoke();
     }
 
     public Vector3 GetMovementDir(Camera playerCam) {

@@ -127,17 +127,37 @@ public partial class @GameInput: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SpecialAttack"",
+                    ""type"": ""Button"",
+                    ""id"": ""c73ea46c-a3eb-41e5-b8d5-27cd3854b977"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
                 {
                     ""name"": """",
                     ""id"": ""0693eacf-cb8f-4b0b-b60f-9195e4241294"",
-                    ""path"": ""<Keyboard>/space"",
+                    ""path"": ""<Mouse>/leftButton"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Spit"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""97523cd7-0ccc-43b7-9256-1df5ff3fa302"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SpecialAttack"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -170,6 +190,7 @@ public partial class @GameInput: IInputActionCollection2, IDisposable
         // PlayerButtons
         m_PlayerButtons = asset.FindActionMap("PlayerButtons", throwIfNotFound: true);
         m_PlayerButtons_Spit = m_PlayerButtons.FindAction("Spit", throwIfNotFound: true);
+        m_PlayerButtons_SpecialAttack = m_PlayerButtons.FindAction("SpecialAttack", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -286,11 +307,13 @@ public partial class @GameInput: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_PlayerButtons;
     private List<IPlayerButtonsActions> m_PlayerButtonsActionsCallbackInterfaces = new List<IPlayerButtonsActions>();
     private readonly InputAction m_PlayerButtons_Spit;
+    private readonly InputAction m_PlayerButtons_SpecialAttack;
     public struct PlayerButtonsActions
     {
         private @GameInput m_Wrapper;
         public PlayerButtonsActions(@GameInput wrapper) { m_Wrapper = wrapper; }
         public InputAction @Spit => m_Wrapper.m_PlayerButtons_Spit;
+        public InputAction @SpecialAttack => m_Wrapper.m_PlayerButtons_SpecialAttack;
         public InputActionMap Get() { return m_Wrapper.m_PlayerButtons; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -303,6 +326,9 @@ public partial class @GameInput: IInputActionCollection2, IDisposable
             @Spit.started += instance.OnSpit;
             @Spit.performed += instance.OnSpit;
             @Spit.canceled += instance.OnSpit;
+            @SpecialAttack.started += instance.OnSpecialAttack;
+            @SpecialAttack.performed += instance.OnSpecialAttack;
+            @SpecialAttack.canceled += instance.OnSpecialAttack;
         }
 
         private void UnregisterCallbacks(IPlayerButtonsActions instance)
@@ -310,6 +336,9 @@ public partial class @GameInput: IInputActionCollection2, IDisposable
             @Spit.started -= instance.OnSpit;
             @Spit.performed -= instance.OnSpit;
             @Spit.canceled -= instance.OnSpit;
+            @SpecialAttack.started -= instance.OnSpecialAttack;
+            @SpecialAttack.performed -= instance.OnSpecialAttack;
+            @SpecialAttack.canceled -= instance.OnSpecialAttack;
         }
 
         public void RemoveCallbacks(IPlayerButtonsActions instance)
@@ -344,5 +373,6 @@ public partial class @GameInput: IInputActionCollection2, IDisposable
     public interface IPlayerButtonsActions
     {
         void OnSpit(InputAction.CallbackContext context);
+        void OnSpecialAttack(InputAction.CallbackContext context);
     }
 }
