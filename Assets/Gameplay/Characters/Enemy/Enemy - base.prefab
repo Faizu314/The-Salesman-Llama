@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 3153454518556404451}
   - component: {fileID: 6977536092758395115}
   m_Layer: 0
-  m_Name: WetBarContainer
-  m_TagString: Untagged
+  m_Name: Capsule
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

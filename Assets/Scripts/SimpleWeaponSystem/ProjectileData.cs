@@ -14,4 +14,7 @@ public class ProjectileData : ScriptableObject {
 
     public Vector3 LocalPositionOffset;
     public Quaternion LocalRotationOffset;
+
+    [Space(5f)] [Header("Sound Data")]
+    public FModEvents.EventReferenceType HitSound;
 }
