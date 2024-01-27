@@ -5,16 +5,15 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private PlayerInput m_PlayerInput;
     [SerializeField] private PlayerMotor m_PlayerMotor;
     [SerializeField] private Thrower m_Thrower;
-    [SerializeField] private float m_SpitCooldown;
+    [SerializeField] private SpecialThrower m_SpecialThrower;
 
     private Camera m_Camera;
-    private float m_SpitTimestamp;
 
     private void Start() {
-        m_SpitTimestamp = -m_SpitCooldown;
         m_Camera = Camera.main;
 
         m_PlayerInput.OnSpitButtonPress += Spit;
+        m_PlayerInput.OnSpecialButtonPress += SpecialAttack;
     }
 
     private void Update() {
@@ -24,10 +23,10 @@ public class PlayerController : MonoBehaviour
     }
 
     private void Spit() {
-        if (Time.time - m_SpitTimestamp < m_SpitCooldown)
-            return;
-
         m_Thrower.Spit();
-        m_SpitTimestamp = Time.time;
+    }
+
+    private void SpecialAttack() {
+        m_SpecialThrower.SpecialAttack();
     }
 }
