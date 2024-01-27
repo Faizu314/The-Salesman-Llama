@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 288297220945630731}
   - component: {fileID: 298565775067444549}
   - component: {fileID: 7800115531582591701}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Pepper
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2361785106471439442}
   - component: {fileID: 2369513801203412770}
   - component: {fileID: -3903651498144554618}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Gyoza
   m_TagString: Untagged
   m_Icon: {fileID: 0}

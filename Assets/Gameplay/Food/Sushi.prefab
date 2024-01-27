@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 9060354920422016696}
   - component: {fileID: 9050075802980333796}
   - component: {fileID: -5557784807916323416}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Sushi
   m_TagString: Untagged
   m_Icon: {fileID: 0}

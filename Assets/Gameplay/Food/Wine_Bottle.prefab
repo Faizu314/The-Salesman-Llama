@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4225028639727136836}
   - component: {fileID: 4217297915277051436}
   - component: {fileID: 6267870477107735774}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wine_Bottle
   m_TagString: Untagged
   m_Icon: {fileID: 0}

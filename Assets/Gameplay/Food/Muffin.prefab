@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 932213513094717553}
   - component: {fileID: 921945404364143441}
   - component: {fileID: -7203756590797776073}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Muffin
   m_TagString: Untagged
   m_Icon: {fileID: 0}

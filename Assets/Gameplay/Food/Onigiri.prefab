@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6790969137813722676}
   - component: {fileID: 6780966671642069490}
   - component: {fileID: -7618010912896524604}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Onigiri
   m_TagString: Untagged
   m_Icon: {fileID: 0}

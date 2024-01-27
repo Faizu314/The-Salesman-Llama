@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7920592096516192285}
   - component: {fileID: 7912564774980043273}
   - component: {fileID: -1831841541460359717}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SweetPepper
   m_TagString: Untagged
   m_Icon: {fileID: 0}

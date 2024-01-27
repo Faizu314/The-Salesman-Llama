@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8294373945839128661}
   - component: {fileID: 8304358565131103587}
   - component: {fileID: -8073728214939666913}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Drink_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
