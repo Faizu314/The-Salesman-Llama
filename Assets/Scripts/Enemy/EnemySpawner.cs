@@ -8,13 +8,14 @@ using UnityEngine.Pool;
 public class EnemySpawner : MonoBehaviour
 {
     [SerializeField] BoxCollider m_spawnBox;
+    [SerializeField] Transform m_barberShopDestination;
     [SerializeField] Enemy m_enemyPrefab;
     [SerializeField] int m_delayMin;
     [SerializeField] int m_delayMax;
 
     ObjectPool<Enemy> m_enemyPool;
 
-    CancellationToken token;
+    CancellationTokenSource tokenSource;
 
     private void Awake()
     {
@@ -25,6 +26,7 @@ public class EnemySpawner : MonoBehaviour
     private Enemy CreateEnemy()
     {
         Enemy instance = Instantiate(m_enemyPrefab);
+        instance.BarberShopDestination = m_barberShopDestination;
         instance.reachDestination += x => m_enemyPool.Release(x);
         instance.gameObject.SetActive(false);
         return instance;
@@ -46,16 +48,16 @@ public class EnemySpawner : MonoBehaviour
 
     public void StartSpawnEnemies()
     {
-        token = new CancellationToken();
-        SpawnEnemies(token).Forget();
+        tokenSource = new CancellationTokenSource();
+        SpawnEnemies(tokenSource).Forget();
     }
 
-    async UniTaskVoid SpawnEnemies(CancellationToken token)
+    async UniTaskVoid SpawnEnemies(CancellationTokenSource tokenSource)
     {
-        while (!token.IsCancellationRequested)
+        while (!tokenSource.IsCancellationRequested)
         {
             m_enemyPool.Get();
-            await UniTask.Delay(Random.Range(m_delayMin, m_delayMax), cancellationToken: token);
+            await UniTask.Delay(Random.Range(m_delayMin, m_delayMax), cancellationToken: tokenSource.Token);
         }
     }
 }
