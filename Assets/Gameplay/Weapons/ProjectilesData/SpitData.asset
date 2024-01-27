@@ -15,7 +15,7 @@ MonoBehaviour:
   Cooldown: 0.5
   Speed: 15
   Range: 10
-  Damage: 0
+  Damage: 1
   LocalPositionOffset: {x: 0, y: 0, z: 0}
   LocalRotationOffset: {x: 0, y: 0, z: 0, w: 0}
   HitSound: 6
