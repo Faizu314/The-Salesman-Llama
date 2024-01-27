@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1827669870150763926}
   - component: {fileID: 1812198266163670766}
   - component: {fileID: 1802200226324897234}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Saucisson
   m_TagString: Untagged
   m_Icon: {fileID: 0}

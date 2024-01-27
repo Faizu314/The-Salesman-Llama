@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8679115769999414714}
   - component: {fileID: 8649551649961122464}
   - component: {fileID: 8659835290174074916}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Donut
   m_TagString: Untagged
   m_Icon: {fileID: 0}

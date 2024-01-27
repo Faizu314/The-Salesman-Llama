@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7265417802668166397}
   - component: {fileID: 7253322455066029115}
   - component: {fileID: 7245290584304495467}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Mochi
   m_TagString: Untagged
   m_Icon: {fileID: 0}

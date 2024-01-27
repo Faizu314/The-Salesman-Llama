@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8857072979053626119}
   - component: {fileID: 8832029843533727953}
   - component: {fileID: 8842016791036219605}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Fries
   m_TagString: Untagged
   m_Icon: {fileID: 0}

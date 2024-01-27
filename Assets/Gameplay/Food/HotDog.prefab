@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6233270163953990132}
   - component: {fileID: 6267337881515035834}
   - component: {fileID: 6259587516533962236}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: HotDog
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6684765558831521886}
   - component: {fileID: 6682785991884574630}
   - component: {fileID: 6672801126598928246}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Maki
   m_TagString: Untagged
   m_Icon: {fileID: 0}

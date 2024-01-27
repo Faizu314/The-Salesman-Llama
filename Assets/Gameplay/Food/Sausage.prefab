@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5075585673086745901}
   - component: {fileID: 5047148614152588925}
   - component: {fileID: 5057430066397586831}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Sausage
   m_TagString: Untagged
   m_Icon: {fileID: 0}

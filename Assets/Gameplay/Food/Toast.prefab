@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7064153153330857184}
   - component: {fileID: 7094261738858229596}
   - component: {fileID: 7086249378098133132}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Toast
   m_TagString: Untagged
   m_Icon: {fileID: 0}

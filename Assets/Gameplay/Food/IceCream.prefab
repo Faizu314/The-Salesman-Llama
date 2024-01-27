@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4950691548363180713}
   - component: {fileID: 4958299436620892127}
   - component: {fileID: 4966309456240479781}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: IceCream
   m_TagString: Untagged
   m_Icon: {fileID: 0}
