@@ -505,30 +505,5 @@ PrefabInstance:
       propertyPath: m_Name
       value: CoreManagers
       objectReference: {fileID: 0}
-    - target: {fileID: 5410349248767223782, guid: 59cd6b848f180034196f3fe78494e1b2,
-        type: 3}
-      propertyPath: <MainMenuTheme>k__BackingField.Path
-      value: event:/SoundTest
-      objectReference: {fileID: 0}
-    - target: {fileID: 5410349248767223782, guid: 59cd6b848f180034196f3fe78494e1b2,
-        type: 3}
-      propertyPath: <MainMenuTheme>k__BackingField.Guid.Data1
-      value: -492675844
-      objectReference: {fileID: 0}
-    - target: {fileID: 5410349248767223782, guid: 59cd6b848f180034196f3fe78494e1b2,
-        type: 3}
-      propertyPath: <MainMenuTheme>k__BackingField.Guid.Data2
-      value: 1074350887
-      objectReference: {fileID: 0}
-    - target: {fileID: 5410349248767223782, guid: 59cd6b848f180034196f3fe78494e1b2,
-        type: 3}
-      propertyPath: <MainMenuTheme>k__BackingField.Guid.Data3
-      value: 35583932
-      objectReference: {fileID: 0}
-    - target: {fileID: 5410349248767223782, guid: 59cd6b848f180034196f3fe78494e1b2,
-        type: 3}
-      propertyPath: <MainMenuTheme>k__BackingField.Guid.Data4
-      value: 529208772
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 59cd6b848f180034196f3fe78494e1b2, type: 3}
