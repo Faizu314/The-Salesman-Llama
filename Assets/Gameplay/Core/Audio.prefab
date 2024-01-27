@@ -72,7 +72,7 @@ MonoBehaviour:
       Data2: 1131101418
       Data3: -383649613
       Data4: -1271500197
-    Path: event:/SFX/Special _Atack
+    Path: event:/SFX/Food
   <CoolDownNormal>k__BackingField:
     Guid:
       Data1: -1474424397
