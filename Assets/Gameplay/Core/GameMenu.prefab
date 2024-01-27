@@ -68,8 +68,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: A Morden Day of Llama
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 398b8395efb620746810320bdcab7f11, type: 2}
+  m_sharedMaterial: {fileID: -7085885152651505564, guid: 398b8395efb620746810320bdcab7f11,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -472,8 +473,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: Start!
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 398b8395efb620746810320bdcab7f11, type: 2}
+  m_sharedMaterial: {fileID: -7085885152651505564, guid: 398b8395efb620746810320bdcab7f11,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -607,8 +609,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: Start Day
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 398b8395efb620746810320bdcab7f11, type: 2}
+  m_sharedMaterial: {fileID: -7085885152651505564, guid: 398b8395efb620746810320bdcab7f11,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -818,8 +821,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: Mr.Llama will do better tomorrow
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 398b8395efb620746810320bdcab7f11, type: 2}
+  m_sharedMaterial: {fileID: -7085885152651505564, guid: 398b8395efb620746810320bdcab7f11,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -953,8 +957,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: 0
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 398b8395efb620746810320bdcab7f11, type: 2}
+  m_sharedMaterial: {fileID: -7085885152651505564, guid: 398b8395efb620746810320bdcab7f11,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1458,8 +1463,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: The Salsema
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 398b8395efb620746810320bdcab7f11, type: 2}
+  m_sharedMaterial: {fileID: -7085885152651505564, guid: 398b8395efb620746810320bdcab7f11,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1833,8 +1839,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: You didn't earn enough money today!
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 398b8395efb620746810320bdcab7f11, type: 2}
+  m_sharedMaterial: {fileID: -7085885152651505564, guid: 398b8395efb620746810320bdcab7f11,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2102,8 +2109,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: 00:00
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 398b8395efb620746810320bdcab7f11, type: 2}
+  m_sharedMaterial: {fileID: -7085885152651505564, guid: 398b8395efb620746810320bdcab7f11,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2237,8 +2245,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: Earn 000 today!
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 398b8395efb620746810320bdcab7f11, type: 2}
+  m_sharedMaterial: {fileID: -7085885152651505564, guid: 398b8395efb620746810320bdcab7f11,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2372,8 +2381,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: What a wonderful day Llama!
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 398b8395efb620746810320bdcab7f11, type: 2}
+  m_sharedMaterial: {fileID: -7085885152651505564, guid: 398b8395efb620746810320bdcab7f11,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2583,8 +2593,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: Exit
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 398b8395efb620746810320bdcab7f11, type: 2}
+  m_sharedMaterial: {fileID: -7085885152651505564, guid: 398b8395efb620746810320bdcab7f11,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2718,8 +2729,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: Exit
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 398b8395efb620746810320bdcab7f11, type: 2}
+  m_sharedMaterial: {fileID: -7085885152651505564, guid: 398b8395efb620746810320bdcab7f11,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
