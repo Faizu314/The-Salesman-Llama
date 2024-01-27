@@ -12,6 +12,7 @@ public class OverlayUI : UIBase
     [SerializeField] TextMeshProUGUI m_moneyText;
     [SerializeField] TextMeshProUGUI m_countdownText;
     [SerializeField] TextMeshProUGUI m_startText;
+    [SerializeField] TextMeshProUGUI m_goalText;
     int m_currentMoney = 0;
 
     public int CurrentMoney => m_currentMoney;
@@ -30,6 +31,7 @@ public class OverlayUI : UIBase
 
     public override void TransitionIntoScreen()
     {
+        m_goalText.text = $"Earn {GameManager.Instance.Settings.MoneyGoal} today!";
         ResetMoney();
         base.TransitionIntoScreen();
     }
@@ -37,13 +39,13 @@ public class OverlayUI : UIBase
     public void AddMoney(int add)
     {
         m_currentMoney += add;
-        m_moneyText.text = m_currentMoney.ToString();
+        m_moneyText.text = $"+{m_currentMoney}";
     }
 
     public void ResetMoney()
     {
         m_currentMoney = 0;
-        m_moneyText.text = "0";
+        m_moneyText.text = $"+{m_currentMoney}";
     }
 
     public void UpdateTimer(int minutes, int seconds, GameState gameState)
