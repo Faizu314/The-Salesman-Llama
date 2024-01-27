@@ -39,13 +39,13 @@ public class OverlayUI : UIBase
     public void AddMoney(int add)
     {
         m_currentMoney += add;
-        m_moneyText.text = $"+{m_currentMoney}";
+        m_moneyText.text = $"+${m_currentMoney}";
     }
 
     public void ResetMoney()
     {
         m_currentMoney = 0;
-        m_moneyText.text = $"+{m_currentMoney}";
+        m_moneyText.text = $"+${m_currentMoney}";
     }
 
     public void UpdateTimer(int minutes, int seconds, GameState gameState)
