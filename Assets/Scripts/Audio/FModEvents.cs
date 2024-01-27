@@ -4,6 +4,7 @@ using FMODUnity;
 
 [DefaultExecutionOrder(-1)]
 public class FModEvents : Singleton<FModEvents> {
+    [field: SerializeField] public EventReference Ambience { get; private set; }
     [field: SerializeField] public EventReference MainMenuTheme { get; private set; }
     [field: SerializeField] public EventReference BackgroundMusic { get; private set; }
     [field: SerializeField] public EventReference NormalAttack { get; private set; }
@@ -20,6 +21,7 @@ public class FModEvents : Singleton<FModEvents> {
     [field: SerializeField] public EventReference ScreamLlama { get; private set; }
 
     public enum EventReferenceType {
+        Ambience,
         MainMenuTheme,
         BackgroundMusic,
         NormalAttack,
@@ -38,6 +40,8 @@ public class FModEvents : Singleton<FModEvents> {
 
     public EventReference GetEventReference(EventReferenceType type) {
         switch (type) {
+            case EventReferenceType.Ambience:
+                return Ambience;
             case EventReferenceType.MainMenuTheme:
                 return MainMenuTheme;
             case EventReferenceType.BackgroundMusic:

@@ -45,6 +45,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36fe738a0956f954f80931a081657021, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <Ambience>k__BackingField:
+    Guid:
+      Data1: -1715973163
+      Data2: 1076659581
+      Data3: 2067455135
+      Data4: 1316257639
+    Path: event:/Ambiences/Ambience
   <MainMenuTheme>k__BackingField:
     Guid:
       Data1: 1681977960
@@ -68,11 +75,11 @@ MonoBehaviour:
     Path: event:/SFX/Normal_Atack
   <SpecialAttack>k__BackingField:
     Guid:
-      Data1: -1093322396
-      Data2: 1131101418
-      Data3: -383649613
-      Data4: -1271500197
-    Path: event:/SFX/Food
+      Data1: 830259513
+      Data2: 1106167843
+      Data3: -1516259454
+      Data4: -1882781587
+    Path: event:/SFX/Special_Atack
   <CoolDownNormal>k__BackingField:
     Guid:
       Data1: -1474424397
