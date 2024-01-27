@@ -29,7 +29,12 @@ public class Enemy : MonoBehaviour
     {
         transform.position = startPos;
         transform.rotation = startRot;
-        m_destination = startPos + transform.forward * 20;
+        m_destination = startPos + transform.forward * 60;
+    }
+
+    public void AddDamage(float damage)
+    {
+        m_fillTracker.AddValue(damage);
     }
 
     private void Awake()
@@ -76,12 +81,6 @@ public class Enemy : MonoBehaviour
         if (other.CompareTag("Destination"))
         {
             reachDestination?.Invoke(this);
-        }
-
-        if (other.CompareTag("Projectile"))
-        {
-            m_fillTracker.AddValue(1);
-            other.GetComponent<BaseProjectile>().OnHitProjectile();
         }
     }
 

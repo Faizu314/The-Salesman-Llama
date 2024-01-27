@@ -3,7 +3,8 @@ using System.Collections;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
-public class Projectile : MonoBehaviour {
+public class Projectile : MonoBehaviour
+{
 
     [SerializeField] private ProjectileData m_ProjectileData;
     [SerializeField] private ParticleSystem m_ShootParticles;
@@ -15,11 +16,13 @@ public class Projectile : MonoBehaviour {
     private Rigidbody m_Rb;
     private Action<Projectile> m_OnDestroy;
 
-    private void Awake() {
+    private void Awake()
+    {
         m_Rb = GetComponent<Rigidbody>();
     }
 
-    public void Shoot(Vector3 position, Vector3 forward, Action<Projectile> onDestroy) {
+    public void Shoot(Vector3 position, Vector3 forward, Action<Projectile> onDestroy)
+    {
         AudioManager.Instance.PlayOneShot(FModEvents.Instance.NormalAttack, transform.position);
 
         m_Rb.isKinematic = false;
@@ -38,14 +41,16 @@ public class Projectile : MonoBehaviour {
         StartCoroutine(nameof(CheckRange_Co));
     }
 
-    public void Wield(Transform socket) {
+    public void Wield(Transform socket)
+    {
         m_Rb.isKinematic = true;
         transform.parent = socket;
         transform.localPosition = m_ProjectileData.LocalPositionOffset;
         transform.localRotation = m_ProjectileData.LocalRotationOffset;
     }
 
-    private void OnHit() {
+    private void OnHit()
+    {
         StopAllCoroutines();
 
         if (m_HitParticles != null)
@@ -54,25 +59,31 @@ public class Projectile : MonoBehaviour {
         m_OnDestroy?.Invoke(this);
     }
 
-    private IEnumerator CheckRange_Co() {
+    private IEnumerator CheckRange_Co()
+    {
         var fixedUpdateWait = new WaitForFixedUpdate();
 
         yield return fixedUpdateWait;
 
-        while (Vector3.SqrMagnitude(m_Rb.position - m_StartPos) < m_ProjectileData.Range * m_ProjectileData.Range) {
+        while (Vector3.SqrMagnitude(m_Rb.position - m_StartPos) < m_ProjectileData.Range * m_ProjectileData.Range)
+        {
             yield return fixedUpdateWait;
         }
 
         OnHit();
     }
 
-    private void OnCollisionEnter(Collision collision) {
-        if (collision.gameObject.CompareTag("Enemy")) {
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Enemy"))
+        {
             var soundEvent = FModEvents.Instance.GetEventReference(m_ProjectileData.HitSound);
             AudioManager.Instance.PlayOneShot(soundEvent, Camera.main.transform.position);
             //apply damage
+            var enemy = other.GetComponent<Enemy>();
+            if (enemy != null)
+                enemy.AddDamage(m_ProjectileData.Damage);
+            OnHit();
         }
-
-        OnHit();
     }
 }
