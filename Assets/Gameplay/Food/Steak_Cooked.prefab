@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 326106158066304906}
   - component: {fileID: 359592505130523508}
   - component: {fileID: 349323969520517150}
-  m_Layer: 6
+  - component: {fileID: 1007557079326395442}
+  m_Layer: 0
   m_Name: Steak_Cooked
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -83,3 +84,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &1007557079326395442
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 327416621507533818}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 8cd4586ebadd1934b84fdbadcc9a8072, type: 3}

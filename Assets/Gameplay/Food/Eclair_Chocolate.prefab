@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 5982750895477372166}
   - component: {fileID: 6015692638463320130}
   - component: {fileID: 6005694839806920758}
-  m_Layer: 6
+  - component: {fileID: 5804590659848346852}
+  m_Layer: 0
   m_Name: Eclair_Chocolate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -83,3 +84,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &5804590659848346852
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5983797645320083208}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 1eca6ca9aebee584bad5eae34c02b305, type: 3}

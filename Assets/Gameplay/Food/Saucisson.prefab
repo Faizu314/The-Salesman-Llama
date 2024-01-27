@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 1827669870150763926}
   - component: {fileID: 1812198266163670766}
   - component: {fileID: 1802200226324897234}
-  m_Layer: 6
+  - component: {fileID: -931290151260931946}
+  m_Layer: 0
   m_Name: Saucisson
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -83,3 +84,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &-931290151260931946
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1824107846919902048}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 1d2ed3c151f92f14384ad32733342672, type: 3}
