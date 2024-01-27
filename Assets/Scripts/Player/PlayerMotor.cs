@@ -29,7 +29,7 @@ public class PlayerMotor : MonoBehaviour
     }
 
     private void FixedUpdate() {
-        m_Rb.rotation = Quaternion.Euler(new(0f, Rotation, 0f));
+        m_Rb.rotation = Quaternion.Euler(new(m_Rb.rotation.x, Rotation, m_Rb.rotation.z));
         m_Rb.velocity = VelocityDir * Speed;
 
         //RestrictMovement();
