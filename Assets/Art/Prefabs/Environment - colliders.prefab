@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 1490463861095904924}
   - component: {fileID: 8448675104750786592}
   - component: {fileID: 4944588620921401982}
-  m_Layer: 0
-  m_Name: Cube (1)
+  m_Layer: 7
+  m_Name: PlayerMovementRestrictors
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
@@ -109,8 +109,8 @@ GameObject:
   - component: {fileID: 3227139018980539115}
   - component: {fileID: 1669753283934182133}
   - component: {fileID: 3716576234424860319}
-  m_Layer: 0
-  m_Name: Cube (3)
+  m_Layer: 7
+  m_Name: PlayerMovementRestrictors
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
@@ -206,8 +206,8 @@ GameObject:
   - component: {fileID: 84139093778662202}
   - component: {fileID: 409961857277772571}
   - component: {fileID: 5520461860052908842}
-  m_Layer: 0
-  m_Name: Cube (2)
+  m_Layer: 7
+  m_Name: PlayerMovementRestrictors
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
@@ -338,8 +338,8 @@ GameObject:
   - component: {fileID: 1512413896059046329}
   - component: {fileID: 7520699618428032378}
   - component: {fileID: 2283988017835991630}
-  m_Layer: 0
-  m_Name: Cube
+  m_Layer: 7
+  m_Name: PlayerMovementRestrictors
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
