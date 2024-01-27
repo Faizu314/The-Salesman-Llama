@@ -20,7 +20,8 @@ public class EnemySpawner : MonoBehaviour
     private void Awake()
     {
         m_enemyPool = new ObjectPool<Enemy>(CreateEnemy, OnGet, OnRelease, null, false);
-        StartSpawnEnemies();
+        GameManager.Instance.gameStarted += StartSpawnEnemies;
+        GameManager.Instance.gameOvered += StopSpawnEnemies;
     }
 
     private Enemy CreateEnemy()
@@ -50,6 +51,11 @@ public class EnemySpawner : MonoBehaviour
     {
         tokenSource = new CancellationTokenSource();
         SpawnEnemies(tokenSource).Forget();
+    }
+
+    public void StopSpawnEnemies()
+    {
+        if (tokenSource != null) tokenSource.Cancel();
     }
 
     async UniTaskVoid SpawnEnemies(CancellationTokenSource tokenSource)
