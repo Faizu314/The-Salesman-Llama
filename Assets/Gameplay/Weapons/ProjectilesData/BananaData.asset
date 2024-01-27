@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1cfc750e9d29cd342bd4a5387a673768, type: 3}
-  m_Name: SpitData
+  m_Name: BananaData
   m_EditorClassIdentifier: 
-  Cooldown: 0.5
-  Speed: 15
-  Range: 10
+  Cooldown: 2
+  Speed: 10
+  Range: 20
   Damage: 0
   LocalPositionOffset: {x: 0, y: 0, z: 0}
   LocalRotationOffset: {x: 0, y: 0, z: 0, w: 0}
