@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Pool;
 
@@ -17,6 +16,11 @@ public class SpecialThrower : MonoBehaviour {
     private void Start() {
         m_SpecialProjectilesPool = new(CreateProjectile, GetProjectile, ReleaseProjectile, defaultCapacity: 10, maxSize: 10);
 
+        StartCoroutine(nameof(Test_Co));
+    }
+
+    private IEnumerator Test_Co() {
+        yield return new WaitForSeconds(1f);
         LoadSpecialAttack();
     }
 
@@ -42,14 +46,13 @@ public class SpecialThrower : MonoBehaviour {
         if (!m_CanThrow)
             return;
 
-        m_LoadedProjectile.Shoot(m_AttackStartPoint.position, m_AttackStartPoint.forward, (x) => m_SpecialProjectilesPool.Release(x));
+        float coolDown = m_LoadedProjectile.Shoot(m_AttackStartPoint.position, m_AttackStartPoint.forward, (x) => m_SpecialProjectilesPool.Release(x));
 
-        StartCoroutine(nameof(Cooldown_Co), m_LoadedProjectile.CooldownTime);
+        m_CanThrow = false;
+        StartCoroutine(nameof(Cooldown_Co), coolDown);
     }
 
     private IEnumerator Cooldown_Co(float cooldownTime) {
-        m_CanThrow = false;
-
         yield return new WaitForSeconds(cooldownTime);
 
         m_CanThrow = true;

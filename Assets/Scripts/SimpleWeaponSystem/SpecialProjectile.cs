@@ -6,8 +6,6 @@ public class SpecialProjectile : MonoBehaviour {
 
     [SerializeField] private List<Projectile> m_Projectiles;
 
-    public float CooldownTime => 0f;
-
     private Action<SpecialProjectile> m_OnProjectileDestroyed;
     private Projectile m_ActivatedProjectile;
 
@@ -18,7 +16,7 @@ public class SpecialProjectile : MonoBehaviour {
     }
 
     public void Wield(Transform projectileSocket) {
-        m_ActivatedProjectile = m_Projectiles[UnityEngine.Random.Range(0, m_Projectiles.Count - 1)];
+        m_ActivatedProjectile = m_Projectiles[UnityEngine.Random.Range(0, m_Projectiles.Count)];
 
         m_ActivatedProjectile.gameObject.SetActive(true);
         m_ActivatedProjectile.Wield(projectileSocket);
