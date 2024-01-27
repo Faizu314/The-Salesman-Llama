@@ -4,6 +4,7 @@ using UnityEngine;
 public class PlayerInput : MonoBehaviour
 {
     public Action OnSpitButtonPress;
+    public Action OnSpecialButtonPress;
 
     private InputManager m_InputManager;
     private GameInput m_GlobalInput;
@@ -14,8 +15,10 @@ public class PlayerInput : MonoBehaviour
 
         m_GlobalInput.PlayerMovement.Enable();
         m_GlobalInput.PlayerButtons.Enable();
+        m_GlobalInput.PlayerCamMovement.Enable();
 
         m_GlobalInput.PlayerButtons.Spit.performed += (x) => OnSpitButtonPress?.Invoke();
+        m_GlobalInput.PlayerButtons.SpecialAttack.performed += (x) => OnSpecialButtonPress?.Invoke();
     }
 
     public Vector3 GetMovementDir(Camera playerCam) {
@@ -30,6 +33,10 @@ public class PlayerInput : MonoBehaviour
         camForward.Normalize();
 
         return inputRot * camForward * inputDir.magnitude;
+    }
+
+    public int GetCamMovementDir() {
+        return (int)m_GlobalInput.PlayerCamMovement.CamMoveDir.ReadValue<float>();
     }
 
     /// <param name="baseRotDir">This is a vector on the xz plane which defines the direction the player is looking at when its rotation is 0.</param>
@@ -51,5 +58,6 @@ public class PlayerInput : MonoBehaviour
     private void OnDestroy() {
         m_GlobalInput.PlayerMovement.Disable();
         m_GlobalInput.PlayerButtons.Disable();
+        m_GlobalInput.PlayerCamMovement.Disable();
     }
 }

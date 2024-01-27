@@ -15,18 +15,24 @@ public class PlayerMotor : MonoBehaviour
         m_Rb = GetComponent<Rigidbody>();
     }
 
-    private void Update() {
+    private void RestrictMovement() {
         if (m_PlayerBounds == null)
             return;
 
         Bounds bounds = m_PlayerBounds.bounds;
-        if (!bounds.Contains(m_Rb.transform.position))
-            m_Rb.transform.position = bounds.ClosestPoint(m_Rb.transform.position);
+        if (!bounds.Contains(m_Rb.position))
+            m_Rb.MovePosition(bounds.ClosestPoint(m_Rb.position));
+    }
+
+    private void Update() {
+        RestrictMovement();
     }
 
     private void FixedUpdate() {
         m_Rb.rotation = Quaternion.Euler(new(0f, Rotation, 0f));
         m_Rb.velocity = VelocityDir * Speed;
+
+        //RestrictMovement();
     }
 
 }

@@ -127,19 +127,89 @@ public partial class @GameInput: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SpecialAttack"",
+                    ""type"": ""Button"",
+                    ""id"": ""c73ea46c-a3eb-41e5-b8d5-27cd3854b977"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
                 {
                     ""name"": """",
                     ""id"": ""0693eacf-cb8f-4b0b-b60f-9195e4241294"",
-                    ""path"": ""<Keyboard>/space"",
+                    ""path"": ""<Mouse>/leftButton"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Spit"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""97523cd7-0ccc-43b7-9256-1df5ff3fa302"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SpecialAttack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""PlayerCamMovement"",
+            ""id"": ""0ce088ea-5a58-494c-a000-388bec523b57"",
+            ""actions"": [
+                {
+                    ""name"": ""CamMoveDir"",
+                    ""type"": ""Value"",
+                    ""id"": ""1361e8f5-9d39-41b9-988d-5cc25017f565"",
+                    ""expectedControlType"": ""Axis"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": ""1D Axis"",
+                    ""id"": ""003eb574-ed08-4424-8193-380dcf46accf"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CamMoveDir"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""fa039ca2-4a27-457f-8766-4c09460fff18"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CamMoveDir"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""124f20c4-47bf-44f8-8913-19bfa69f5031"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CamMoveDir"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 }
             ]
         }
@@ -170,6 +240,10 @@ public partial class @GameInput: IInputActionCollection2, IDisposable
         // PlayerButtons
         m_PlayerButtons = asset.FindActionMap("PlayerButtons", throwIfNotFound: true);
         m_PlayerButtons_Spit = m_PlayerButtons.FindAction("Spit", throwIfNotFound: true);
+        m_PlayerButtons_SpecialAttack = m_PlayerButtons.FindAction("SpecialAttack", throwIfNotFound: true);
+        // PlayerCamMovement
+        m_PlayerCamMovement = asset.FindActionMap("PlayerCamMovement", throwIfNotFound: true);
+        m_PlayerCamMovement_CamMoveDir = m_PlayerCamMovement.FindAction("CamMoveDir", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -286,11 +360,13 @@ public partial class @GameInput: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_PlayerButtons;
     private List<IPlayerButtonsActions> m_PlayerButtonsActionsCallbackInterfaces = new List<IPlayerButtonsActions>();
     private readonly InputAction m_PlayerButtons_Spit;
+    private readonly InputAction m_PlayerButtons_SpecialAttack;
     public struct PlayerButtonsActions
     {
         private @GameInput m_Wrapper;
         public PlayerButtonsActions(@GameInput wrapper) { m_Wrapper = wrapper; }
         public InputAction @Spit => m_Wrapper.m_PlayerButtons_Spit;
+        public InputAction @SpecialAttack => m_Wrapper.m_PlayerButtons_SpecialAttack;
         public InputActionMap Get() { return m_Wrapper.m_PlayerButtons; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -303,6 +379,9 @@ public partial class @GameInput: IInputActionCollection2, IDisposable
             @Spit.started += instance.OnSpit;
             @Spit.performed += instance.OnSpit;
             @Spit.canceled += instance.OnSpit;
+            @SpecialAttack.started += instance.OnSpecialAttack;
+            @SpecialAttack.performed += instance.OnSpecialAttack;
+            @SpecialAttack.canceled += instance.OnSpecialAttack;
         }
 
         private void UnregisterCallbacks(IPlayerButtonsActions instance)
@@ -310,6 +389,9 @@ public partial class @GameInput: IInputActionCollection2, IDisposable
             @Spit.started -= instance.OnSpit;
             @Spit.performed -= instance.OnSpit;
             @Spit.canceled -= instance.OnSpit;
+            @SpecialAttack.started -= instance.OnSpecialAttack;
+            @SpecialAttack.performed -= instance.OnSpecialAttack;
+            @SpecialAttack.canceled -= instance.OnSpecialAttack;
         }
 
         public void RemoveCallbacks(IPlayerButtonsActions instance)
@@ -327,6 +409,52 @@ public partial class @GameInput: IInputActionCollection2, IDisposable
         }
     }
     public PlayerButtonsActions @PlayerButtons => new PlayerButtonsActions(this);
+
+    // PlayerCamMovement
+    private readonly InputActionMap m_PlayerCamMovement;
+    private List<IPlayerCamMovementActions> m_PlayerCamMovementActionsCallbackInterfaces = new List<IPlayerCamMovementActions>();
+    private readonly InputAction m_PlayerCamMovement_CamMoveDir;
+    public struct PlayerCamMovementActions
+    {
+        private @GameInput m_Wrapper;
+        public PlayerCamMovementActions(@GameInput wrapper) { m_Wrapper = wrapper; }
+        public InputAction @CamMoveDir => m_Wrapper.m_PlayerCamMovement_CamMoveDir;
+        public InputActionMap Get() { return m_Wrapper.m_PlayerCamMovement; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(PlayerCamMovementActions set) { return set.Get(); }
+        public void AddCallbacks(IPlayerCamMovementActions instance)
+        {
+            if (instance == null || m_Wrapper.m_PlayerCamMovementActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_PlayerCamMovementActionsCallbackInterfaces.Add(instance);
+            @CamMoveDir.started += instance.OnCamMoveDir;
+            @CamMoveDir.performed += instance.OnCamMoveDir;
+            @CamMoveDir.canceled += instance.OnCamMoveDir;
+        }
+
+        private void UnregisterCallbacks(IPlayerCamMovementActions instance)
+        {
+            @CamMoveDir.started -= instance.OnCamMoveDir;
+            @CamMoveDir.performed -= instance.OnCamMoveDir;
+            @CamMoveDir.canceled -= instance.OnCamMoveDir;
+        }
+
+        public void RemoveCallbacks(IPlayerCamMovementActions instance)
+        {
+            if (m_Wrapper.m_PlayerCamMovementActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IPlayerCamMovementActions instance)
+        {
+            foreach (var item in m_Wrapper.m_PlayerCamMovementActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_PlayerCamMovementActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public PlayerCamMovementActions @PlayerCamMovement => new PlayerCamMovementActions(this);
     private int m_DesktopSchemeIndex = -1;
     public InputControlScheme DesktopScheme
     {
@@ -344,5 +472,10 @@ public partial class @GameInput: IInputActionCollection2, IDisposable
     public interface IPlayerButtonsActions
     {
         void OnSpit(InputAction.CallbackContext context);
+        void OnSpecialAttack(InputAction.CallbackContext context);
+    }
+    public interface IPlayerCamMovementActions
+    {
+        void OnCamMoveDir(InputAction.CallbackContext context);
     }
 }
