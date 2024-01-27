@@ -9,7 +9,7 @@ public class GameOverWinMenuUI : UIBase
 
     public override void TransitionIntoScreen()
     {
-        m_resultText.text = $"Congrats! You earned ${OverlayUI.Instance.CurrentMoney} today!";
+        m_resultText.text = $"You earned ${OverlayUI.Instance.CurrentMoney} today!";
         base.TransitionIntoScreen();
     }
     public void Exit()
