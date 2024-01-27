@@ -1,33 +1,74 @@
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Pool;
 using UnityEngine.UI;
 
-public class OverlayUI : MonoBehaviour
+public class OverlayUI : UIBase
 {
     public static OverlayUI Instance;
     [SerializeField] TextMeshProUGUI m_moneyText;
-    int currentMoney = 0;
+    [SerializeField] TextMeshProUGUI m_countdownText;
+    [SerializeField] TextMeshProUGUI m_startText;
+    int m_currentMoney = 0;
 
-    private void Awake()
+    public int CurrentMoney => m_currentMoney;
+
+    public override void Awake()
     {
         if (Instance != null)
             Destroy(gameObject);
         else
             Instance = this;
+
+        base.Awake();
+        m_startText.alpha = 0;
+        GameManager.Instance.gameStarted += OnGameStarted;
+    }
+
+    public override void TransitionIntoScreen()
+    {
+        ResetMoney();
+        base.TransitionIntoScreen();
     }
 
     public void AddMoney(int add)
     {
-        currentMoney += add;
-        m_moneyText.text = currentMoney.ToString();
+        m_currentMoney += add;
+        m_moneyText.text = m_currentMoney.ToString();
     }
 
     public void ResetMoney()
     {
-        currentMoney = 0;
+        m_currentMoney = 0;
         m_moneyText.text = "0";
+    }
+
+    public void UpdateTimer(int minutes, int seconds, GameState gameState)
+    {
+        m_countdownText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+        switch (gameState)
+        {
+            case GameState.Countdown:
+                m_countdownText.color = Color.yellow;
+                break;
+            case GameState.InGame:
+                m_countdownText.color = Color.white;
+                break;
+            case GameState.GameAboutToOver:
+                m_countdownText.color = Color.red;
+                break;
+            case GameState.GameOver:
+                m_countdownText.color = Color.red;
+                break;
+        }
+    }
+
+    public void OnGameStarted()
+    {
+        m_startText.alpha = 1;
+        m_startText.DOFade(0, 1).SetDelay(2);
     }
 }
