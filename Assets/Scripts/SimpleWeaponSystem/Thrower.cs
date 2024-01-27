@@ -34,9 +34,13 @@ public class Thrower : MonoBehaviour {
 
         var proj = m_SpitPool.Get();
 
-        proj.Shoot(m_SpitStartPoint.position, m_SpitStartPoint.forward, (x) => m_SpitPool.Release(x));
+        proj.Shoot(m_SpitStartPoint.position, m_SpitStartPoint.forward, OnProjectileDestroyed);
 
         StartCoroutine(nameof(Cooldown_Co), proj.CooldownTime);
+    }
+
+    private void OnProjectileDestroyed(Projectile proj) {
+        m_SpitPool.Release(proj);
     }
 
     private IEnumerator Cooldown_Co(float cooldownTime) {
@@ -50,6 +54,6 @@ public class Thrower : MonoBehaviour {
     }
 
     private void OnCooldown() {
-        //play cooldown sound
+        AudioManager.Instance.PlayOneShot(FModEvents.Instance.CoolDownNormal, transform.position);
     }
 }

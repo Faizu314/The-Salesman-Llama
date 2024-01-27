@@ -20,6 +20,8 @@ public class Projectile : MonoBehaviour {
     }
 
     public void Shoot(Vector3 position, Vector3 forward, Action<Projectile> onDestroy) {
+        AudioManager.Instance.PlayOneShot(FModEvents.Instance.NormalAttack, transform.position);
+
         m_Rb.isKinematic = false;
 
         transform.position = position;
@@ -65,9 +67,9 @@ public class Projectile : MonoBehaviour {
     }
 
     private void OnCollisionEnter(Collision collision) {
-        collision.gameObject.TryGetComponent<Enemy>(out var enemy);
-
-        if (enemy != null) {
+        if (collision.gameObject.CompareTag("Enemy")) {
+            var soundEvent = FModEvents.Instance.GetEventReference(m_ProjectileData.HitSound);
+            AudioManager.Instance.PlayOneShot(soundEvent, Camera.main.transform.position);
             //apply damage
         }
 

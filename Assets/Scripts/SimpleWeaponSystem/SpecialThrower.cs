@@ -61,7 +61,7 @@ public class SpecialThrower : MonoBehaviour {
     }
 
     private void OnCooldown() {
-        //play cooldown sound
+        AudioManager.Instance.PlayOneShot(FModEvents.Instance.CoolDownSpecial, transform.position);
         LoadSpecialAttack();
     }
 }
