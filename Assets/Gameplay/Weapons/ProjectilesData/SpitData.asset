@@ -18,4 +18,7 @@ MonoBehaviour:
   Damage: 1
   LocalPositionOffset: {x: 0, y: 0, z: 0}
   LocalRotationOffset: {x: 0, y: 0, z: 0, w: 0}
+  Icon: {fileID: 0}
   HitSound: 7
+  HitParticles: 0
+  SpawnParticles: 1

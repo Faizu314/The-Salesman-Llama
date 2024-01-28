@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
@@ -8,9 +7,6 @@ public class Projectile : MonoBehaviour
 {
 
     [SerializeField] private ProjectileData m_ProjectileData;
-    [SerializeField] private ParticleSystem m_ShootParticles;
-    [SerializeField] private ParticleSystem m_HitParticles;
-
     public float CooldownTime => m_ProjectileData.Cooldown;
     public Sprite Icon => m_ProjectileData.Icon;
 
@@ -41,8 +37,7 @@ public class Projectile : MonoBehaviour
         m_StartPos = position;
         m_OnDestroy = onDestroy;
 
-        if (m_ShootParticles != null)
-            m_ShootParticles.Play();
+        VfxSpawner.Instance.SpawnVFX(m_ProjectileData.SpawnParticles, transform.position);
 
         m_Rb.velocity = forward * m_ProjectileData.Speed;
 
@@ -65,8 +60,7 @@ public class Projectile : MonoBehaviour
         m_collider.enabled = false;
         StopAllCoroutines();
 
-        if (m_HitParticles != null)
-            m_HitParticles.Play();
+        VfxSpawner.Instance.SpawnVFX(m_ProjectileData.HitParticles, transform.position);
 
         m_OnDestroy?.Invoke(this);
     }
@@ -82,7 +76,7 @@ public class Projectile : MonoBehaviour
             yield return fixedUpdateWait;
         }
 
-        OnHit();
+        m_OnDestroy?.Invoke(this);
     }
 
     private void OnTriggerEnter(Collider other)

@@ -14,7 +14,7 @@ public class SpecialThrower : MonoBehaviour
 
     private ObjectPool<SpecialProjectile> m_SpecialProjectilesPool;
     private SpecialProjectile m_LoadedProjectile;
-    private bool m_CanThrow = true;
+    private bool m_CanThrow = false;
 
     private void Start()
     {
@@ -49,6 +49,7 @@ public class SpecialThrower : MonoBehaviour
     private void PrepareNextSpecialAttack()
     {
         Debug.Log("Prepare");
+        m_CanThrow = true;
         m_LoadedProjectile = m_SpecialProjectilesPool.Get();
         AudioManager.Instance.PlayOneShot(FModEvents.Instance.CoolDownSpecial, transform.position);
     }
@@ -58,8 +59,8 @@ public class SpecialThrower : MonoBehaviour
         Debug.Log("Load " + m_LoadedProjectile.ActivatedProjectile.gameObject.name, m_LoadedProjectile.ActivatedProjectile.gameObject);
         m_indicatorUI.DisableIcon();
         if (m_LoadedProjectile == null) m_LoadedProjectile = m_SpecialProjectilesPool.Get();
-        m_LoadedProjectile.Wield(m_SpecialAttackSocket);
         m_LoadedProjectile.gameObject.SetActive(true);
+        m_LoadedProjectile.Wield(m_SpecialAttackSocket);
         m_Animator.SetBool("Throw", true);
     }
 
@@ -83,8 +84,6 @@ public class SpecialThrower : MonoBehaviour
     private IEnumerator Cooldown_Co(float cooldownTime)
     {
         yield return new WaitForSeconds(cooldownTime);
-
-        m_CanThrow = true;
 
         PrepareNextSpecialAttack();
     }

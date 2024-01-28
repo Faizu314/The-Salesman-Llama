@@ -20,3 +20,5 @@ MonoBehaviour:
   LocalRotationOffset: {x: 0, y: 0, z: 0, w: 0}
   Icon: {fileID: 21300100, guid: 37607ec1aab56e349af84a980f685a4b, type: 3}
   HitSound: 8
+  HitParticles: 2
+  SpawnParticles: 3
