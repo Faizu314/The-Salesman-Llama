@@ -27,7 +27,7 @@ public class Projectile : MonoBehaviour
         Debug.Log("Shoot " + gameObject.name, gameObject);
 
         var soundEvent = FModEvents.Instance.GetEventReference(m_ProjectileData.SpawnSound);
-        AudioManager.Instance.PlayOneShot(soundEvent, Camera.main.transform.position);
+        AudioManager.Instance.PlayOneShotWithParameters(soundEvent, transform.position, m_ProjectileData.Attenuation.x, m_ProjectileData.Attenuation.y);
 
         m_collider.enabled = true;
         m_Rb.isKinematic = false;
@@ -86,7 +86,7 @@ public class Projectile : MonoBehaviour
         if (other.CompareTag("Enemy"))
         {
             var soundEvent = FModEvents.Instance.GetEventReference(m_ProjectileData.HitSound);
-            AudioManager.Instance.PlayOneShot(soundEvent, Camera.main.transform.position);
+            AudioManager.Instance.PlayOneShotWithParameters(soundEvent, transform.position, m_ProjectileData.Attenuation.x, m_ProjectileData.Attenuation.y);
             //apply damage
             var enemy = other.GetComponent<Enemy>();
             if (enemy != null)
