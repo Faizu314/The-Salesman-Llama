@@ -26,6 +26,10 @@ public class OverlayUI : UIBase
 
         base.Awake();
         m_startText.alpha = 0;
+    }
+
+    private void Start()
+    {
         GameManager.Instance.gameStarted += OnGameStarted;
     }
 

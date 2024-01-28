@@ -55,4 +55,9 @@ public class UIManager : MonoBehaviour
     {
         AudioManager.Instance.PlayOneShot(FModEvents.Instance.ButtonHover, Vector3.zero);
     }
+
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
 }
