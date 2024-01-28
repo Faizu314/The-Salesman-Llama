@@ -22,5 +22,7 @@ MonoBehaviour:
   HitSound: 8
   SpawnSound: 4
   Attenuation: {x: 5, y: 60}
-  HitParticles: 2
-  SpawnParticles: 3
+  HitParticles: {fileID: 6853366362944525616, guid: 3f693353cc238214d9da613b4981ca10,
+    type: 3}
+  SpawnParticles: {fileID: 8613292636651882567, guid: dad229877b82a474da0dfc3413cb8a4c,
+    type: 3}
