@@ -15,12 +15,14 @@ public class GameManager : MonoBehaviour
     public GameSettings Settings => m_gameSettings;
     public bool IsInGame => m_isInGame;
 
-    public Action countdownStarted;
+    public Action gameStartCountdownStarted;
+    public Action gameEndCountdownStarted;
     public Action gameStarted;
     public Action<bool> gameOvered;
 
     float m_timeLeft;
     bool m_isInGame;
+    bool m_isGameOverCountdownStarted;
 
     private void Awake()
     {
@@ -33,13 +35,14 @@ public class GameManager : MonoBehaviour
     public void StartGame()
     {
         UIManager.Instance.TransitionToScreen(UIScreen.OverlayMenu);
-        countdownStarted?.Invoke();
+        gameStartCountdownStarted?.Invoke();
         GameCountdown().Forget();
     }
 
     public void GameOver()
     {
         m_isInGame = false;
+        m_isGameOverCountdownStarted = false;
 
         if (OverlayUI.Instance.CurrentMoney >= m_gameSettings.MoneyGoal)
         {
@@ -73,10 +76,16 @@ public class GameManager : MonoBehaviour
             int seconds = Mathf.CeilToInt(m_timeLeft) % 60;
             int minutes = Mathf.CeilToInt(m_timeLeft) / 60;
 
+            bool isGameAboutToOver = m_timeLeft < m_gameSettings.GameOverCountdownTime;
+            if (!m_isGameOverCountdownStarted && isGameAboutToOver)
+            {
+                m_isGameOverCountdownStarted = true;
+                gameEndCountdownStarted?.Invoke();
+            }
             OverlayUI.Instance.UpdateTimer(
                 minutes,
                 seconds,
-                m_timeLeft < m_gameSettings.GameOverCountdownTime ? GameState.GameAboutToOver : GameState.InGame
+                isGameAboutToOver ? GameState.GameAboutToOver : GameState.InGame
                 );
 
             m_timeLeft -= Time.deltaTime;
