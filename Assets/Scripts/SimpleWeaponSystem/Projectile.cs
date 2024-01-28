@@ -24,8 +24,6 @@ public class Projectile : MonoBehaviour
 
     public void Shoot(Vector3 position, Vector3 forward, Action<Projectile> onDestroy)
     {
-        Debug.Log("Shoot " + gameObject.name, gameObject);
-
         var soundEvent = FModEvents.Instance.GetEventReference(m_ProjectileData.SpawnSound);
         AudioManager.Instance.PlayOneShotWithParameters(soundEvent, transform.position, m_ProjectileData.Attenuation.x, m_ProjectileData.Attenuation.y);
 
@@ -48,7 +46,6 @@ public class Projectile : MonoBehaviour
 
     public void Wield(Transform socket)
     {
-        Debug.Log("Wield " + gameObject.name);
         if (m_Rb == null)
             m_Rb = GetComponent<Rigidbody>();
         m_Rb.isKinematic = true;
