@@ -33,8 +33,6 @@ public class SpecialProjectile : MonoBehaviour
 
     public float Shoot(Vector3 position, Vector3 forward, Action<SpecialProjectile> onDestroy)
     {
-        AudioManager.Instance.PlayOneShot(FModEvents.Instance.SpecialAttack, position);
-
         m_ActivatedProjectile.transform.parent = null;
         m_ActivatedProjectile.Shoot(position, forward, OnProjectileDestroyed);
 
