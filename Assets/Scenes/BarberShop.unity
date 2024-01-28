@@ -1167,6 +1167,36 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2691072586176810044, guid: 693065ec87c5cc04d8fe7ba680cc4864,
+        type: 3}
+      propertyPath: m_delayMax
+      value: 4000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2691072586176810044, guid: 693065ec87c5cc04d8fe7ba680cc4864,
+        type: 3}
+      propertyPath: m_delayMin
+      value: 3500
+      objectReference: {fileID: 0}
+    - target: {fileID: 2760881580931741570, guid: 693065ec87c5cc04d8fe7ba680cc4864,
+        type: 3}
+      propertyPath: m_delayMax
+      value: 4500
+      objectReference: {fileID: 0}
+    - target: {fileID: 2760881580931741570, guid: 693065ec87c5cc04d8fe7ba680cc4864,
+        type: 3}
+      propertyPath: m_delayMin
+      value: 4000
+      objectReference: {fileID: 0}
+    - target: {fileID: 3644458681967961707, guid: 693065ec87c5cc04d8fe7ba680cc4864,
+        type: 3}
+      propertyPath: m_delayMax
+      value: 5000
+      objectReference: {fileID: 0}
+    - target: {fileID: 3644458681967961707, guid: 693065ec87c5cc04d8fe7ba680cc4864,
+        type: 3}
+      propertyPath: m_delayMin
+      value: 4000
+      objectReference: {fileID: 0}
     - target: {fileID: 6308414898629063682, guid: 693065ec87c5cc04d8fe7ba680cc4864,
         type: 3}
       propertyPath: m_Name
