@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5341572413338962509}
   - component: {fileID: 5341572413338962499}
   - component: {fileID: 5912978004678091780}
+  - component: {fileID: 6801426364197089422}
   m_Layer: 6
   m_Name: Projectile - Base
   m_TagString: Untagged
@@ -62,6 +63,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ProjectileData: {fileID: 0}
-  m_ShootParticles: {fileID: 0}
-  m_HitParticles: {fileID: 8613292636651882567, guid: dfecbe5a052ece44bb0e0e733f1c483d,
-    type: 3}
+--- !u!114 &6801426364197089422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5341572413338962505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  Event: 
+  PlayEvent: 0
+  StopEvent: 12
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: -1
+  OverrideMaxDistance: -1

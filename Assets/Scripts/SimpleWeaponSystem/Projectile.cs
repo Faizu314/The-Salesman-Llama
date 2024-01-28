@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FMODUnity;
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -14,12 +15,18 @@ public class Projectile : MonoBehaviour
     private Rigidbody m_Rb;
     private Action<Projectile> m_OnDestroy;
     private Collider m_collider;
+    private StudioEventEmitter m_Emitter;
 
     private void Awake()
     {
         m_Rb = GetComponent<Rigidbody>();
         m_collider = GetComponentInChildren<Collider>();
+        m_Emitter = GetComponent<StudioEventEmitter>();
         m_collider.enabled = false;
+
+        m_Emitter.OverrideAttenuation = true;
+        m_Emitter.OverrideMaxDistance = m_ProjectileData.Attenuation.y;
+        m_Emitter.OverrideMinDistance = m_ProjectileData.Attenuation.x;
     }
 
     public void Shoot(Vector3 position, Vector3 forward, Action<Projectile> onDestroy)
@@ -27,7 +34,9 @@ public class Projectile : MonoBehaviour
         Debug.Log("Shoot " + gameObject.name, gameObject);
 
         var soundEvent = FModEvents.Instance.GetEventReference(m_ProjectileData.SpawnSound);
-        AudioManager.Instance.PlayOneShotWithParameters(soundEvent, transform.position, m_ProjectileData.Attenuation.x, m_ProjectileData.Attenuation.y);
+        m_Emitter.EventReference = soundEvent;
+        m_Emitter.Play();
+        //AudioManager.Instance.PlayOneShotWithParameters(soundEvent, transform.position, m_ProjectileData.Attenuation.x, m_ProjectileData.Attenuation.y);
 
         m_collider.enabled = true;
         m_Rb.isKinematic = false;
@@ -86,7 +95,9 @@ public class Projectile : MonoBehaviour
         if (other.CompareTag("Enemy"))
         {
             var soundEvent = FModEvents.Instance.GetEventReference(m_ProjectileData.HitSound);
-            AudioManager.Instance.PlayOneShotWithParameters(soundEvent, transform.position, m_ProjectileData.Attenuation.x, m_ProjectileData.Attenuation.y);
+            m_Emitter.EventReference = soundEvent;
+            m_Emitter.Play();
+            //AudioManager.Instance.PlayOneShotWithParameters(soundEvent, transform.position, m_ProjectileData.Attenuation.x, m_ProjectileData.Attenuation.y);
             //apply damage
             var enemy = other.GetComponent<Enemy>();
             if (enemy != null)
