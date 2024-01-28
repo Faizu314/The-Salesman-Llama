@@ -45,4 +45,14 @@ public class UIManager : MonoBehaviour
         }
         currentScreen.TransitionIntoScreen();
     }
+
+    public void PlayButtonClickSFX()
+    {
+        AudioManager.Instance.PlayOneShot(FModEvents.Instance.ButtonClick, Vector3.zero);
+    }
+
+    public void PlayButtonHoverSFX()
+    {
+        AudioManager.Instance.PlayOneShot(FModEvents.Instance.ButtonHover, Vector3.zero);
+    }
 }
