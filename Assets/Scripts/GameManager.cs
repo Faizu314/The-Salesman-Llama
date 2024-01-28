@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     public GameSettings Settings => m_gameSettings;
     public bool IsInGame => m_isInGame;
 
+    public Action countdownStarted;
     public Action gameStarted;
     public Action<bool> gameOvered;
 
@@ -32,6 +33,7 @@ public class GameManager : MonoBehaviour
     public void StartGame()
     {
         UIManager.Instance.TransitionToScreen(UIScreen.OverlayMenu);
+        countdownStarted?.Invoke();
         GameCountdown().Forget();
     }
 
