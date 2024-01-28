@@ -57,7 +57,7 @@ public class EnemySpawner : MonoBehaviour
         SpawnEnemies(tokenSource).Forget();
     }
 
-    public void StopSpawnEnemies()
+    public void StopSpawnEnemies(bool success)
     {
         if (tokenSource != null) tokenSource.Cancel();
     }

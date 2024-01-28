@@ -353,7 +353,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd3f6f0cef8746c4999409d46e164d25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SpecialAttackSocket: {fileID: 8361919101243353436}
+  m_SpecialAttackSocket: {fileID: 8262302049314987632}
   m_AttackStartPoint: {fileID: 5410968616487977144}
   m_Animator: {fileID: 5796157197539380959}
   m_SpecialProjectilePrefab: {fileID: 8353481739217166872, guid: dff5d3a88aac82d498978ddc2331883a,
@@ -792,9 +792,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a6898790c9c13142ab4ab531ea07d6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!4 &8361919101243353436 stripped
+--- !u!4 &8262302049314987632 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 4890235320912966790, guid: 8a21e2419791a4a4999b621232da1451,
+  m_CorrespondingSourceObject: {fileID: 5007877388988236714, guid: 8a21e2419791a4a4999b621232da1451,
     type: 3}
   m_PrefabInstance: {fileID: 4023431921135263194}
   m_PrefabAsset: {fileID: 0}

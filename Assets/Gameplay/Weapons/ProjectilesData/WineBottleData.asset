@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cfc750e9d29cd342bd4a5387a673768, type: 3}
   m_Name: WineBottleData
   m_EditorClassIdentifier: 
-  Cooldown: 0
+  Cooldown: 2
   Speed: 12
   Range: 20
   Damage: 1
