@@ -39,7 +39,7 @@ public class Projectile : MonoBehaviour
         m_StartPos = position;
         m_OnDestroy = onDestroy;
 
-        VfxSpawner.Instance.SpawnVFX(m_ProjectileData.SpawnParticles, transform.position);
+        VfxSpawner.Instance.SpawnVFX(m_ProjectileData.SpawnParticles, transform.position, forward);
 
         m_Rb.velocity = forward * m_ProjectileData.Speed;
 
@@ -62,7 +62,7 @@ public class Projectile : MonoBehaviour
         m_collider.enabled = false;
         StopAllCoroutines();
 
-        VfxSpawner.Instance.SpawnVFX(m_ProjectileData.HitParticles, transform.position);
+        VfxSpawner.Instance.SpawnVFX(m_ProjectileData.HitParticles, transform.position, -transform.forward);
 
         m_OnDestroy?.Invoke(this);
     }
