@@ -63,4 +63,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ProjectileData: {fileID: 0}
   m_ShootParticles: {fileID: 0}
-  m_HitParticles: {fileID: 0}
+  m_HitParticles: {fileID: 8613292636651882567, guid: dfecbe5a052ece44bb0e0e733f1c483d,
+    type: 3}
