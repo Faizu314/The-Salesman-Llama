@@ -43,6 +43,7 @@ public class SpitIndicator : MonoBehaviour
 
     public void EnableIndicator()
     {
-        m_pool.Get();
+        if (m_pool != null)
+            m_pool.Get();
     }
 }
