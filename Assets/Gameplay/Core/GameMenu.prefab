@@ -66,7 +66,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: A Morden Day of Llama
+  m_text: Modern Day Llama
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 398b8395efb620746810320bdcab7f11, type: 2}
   m_sharedMaterial: {fileID: -7085885152651505564, guid: 398b8395efb620746810320bdcab7f11,
@@ -2655,7 +2655,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: What a wonderful day Llama!
+  m_text: What a modern day Llama!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 398b8395efb620746810320bdcab7f11, type: 2}
   m_sharedMaterial: {fileID: -7085885152651505564, guid: 398b8395efb620746810320bdcab7f11,
