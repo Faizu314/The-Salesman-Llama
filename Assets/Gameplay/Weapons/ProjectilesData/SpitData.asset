@@ -21,5 +21,6 @@ MonoBehaviour:
   Icon: {fileID: 0}
   HitSound: 7
   SpawnSound: 3
+  Attenuation: {x: 5, y: 60}
   HitParticles: 0
   SpawnParticles: 1
