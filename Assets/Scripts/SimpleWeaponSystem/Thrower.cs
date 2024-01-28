@@ -7,6 +7,7 @@ public class Thrower : MonoBehaviour
 
     [SerializeField] private Transform m_SpitStartPoint;
     [SerializeField] private Projectile m_SpitPrefab;
+    [SerializeField] private SpitIndicator m_indicatorUI;
 
     private ObjectPool<Projectile> m_SpitPool;
     private bool m_CanSpit = true;
@@ -39,6 +40,7 @@ public class Thrower : MonoBehaviour
 
         var proj = m_SpitPool.Get();
 
+        m_indicatorUI.EnableIndicator();
         proj.Shoot(m_SpitStartPoint.position, m_SpitStartPoint.forward, OnProjectileDestroyed);
 
         StartCoroutine(nameof(Cooldown_Co), proj.CooldownTime);
