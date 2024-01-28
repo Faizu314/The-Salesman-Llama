@@ -430,8 +430,8 @@ MonoBehaviour:
   m_barberShopDestination: {fileID: 2810016558702241289}
   m_enemyPrefab: {fileID: 8233289377175853744, guid: 07111c6a7d808414a885bf8474729cc3,
     type: 3}
-  m_delayMin: 1500
-  m_delayMax: 2000
+  m_delayMin: 3000
+  m_delayMax: 5000
 --- !u!1 &6308414899407972826
 GameObject:
   m_ObjectHideFlags: 0
