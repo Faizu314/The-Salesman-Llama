@@ -3,7 +3,8 @@ using Phezu.Util;
 using FMODUnity;
 
 [DefaultExecutionOrder(-1)]
-public class FModEvents : Singleton<FModEvents> {
+public class FModEvents : Singleton<FModEvents>
+{
     [field: SerializeField] public EventReference Ambience { get; private set; }
     [field: SerializeField] public EventReference MainMenuTheme { get; private set; }
     [field: SerializeField] public EventReference BackgroundMusic { get; private set; }
@@ -19,8 +20,11 @@ public class FModEvents : Singleton<FModEvents> {
     [field: SerializeField] public EventReference WinMatch { get; private set; }
     [field: SerializeField] public EventReference LoseMatch { get; private set; }
     [field: SerializeField] public EventReference ScreamLlama { get; private set; }
+    [field: SerializeField] public EventReference ButtonClick { get; private set; }
+    [field: SerializeField] public EventReference ButtonHover { get; private set; }
 
-    public enum EventReferenceType {
+    public enum EventReferenceType
+    {
         Ambience,
         MainMenuTheme,
         BackgroundMusic,
@@ -36,10 +40,14 @@ public class FModEvents : Singleton<FModEvents> {
         WinMatch,
         LoseMatch,
         ScreamLlama,
+        ButtonClick,
+        ButtonHover
     }
 
-    public EventReference GetEventReference(EventReferenceType type) {
-        switch (type) {
+    public EventReference GetEventReference(EventReferenceType type)
+    {
+        switch (type)
+        {
             case EventReferenceType.Ambience:
                 return Ambience;
             case EventReferenceType.MainMenuTheme:
@@ -70,6 +78,10 @@ public class FModEvents : Singleton<FModEvents> {
                 return LoseMatch;
             case EventReferenceType.ScreamLlama:
                 return ScreamLlama;
+            case EventReferenceType.ButtonClick:
+                return ButtonClick;
+            case EventReferenceType.ButtonHover:
+                return ButtonHover;
             default:
                 return default;
         }

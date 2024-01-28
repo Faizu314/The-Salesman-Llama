@@ -150,6 +150,20 @@ MonoBehaviour:
       Data3: 528087433
       Data4: 1125145802
     Path: event:/SFX/Scream_Lama
+  <ButtonClick>k__BackingField:
+    Guid:
+      Data1: -1967981566
+      Data2: 1168582980
+      Data3: 346594442
+      Data4: -1669635190
+    Path: event:/UI/ButtonClick
+  <ButtonHover>k__BackingField:
+    Guid:
+      Data1: 348631979
+      Data2: 1262796966
+      Data3: 489113999
+      Data4: -1968359638
+    Path: event:/UI/ButtonHover
 --- !u!114 &4997653228427214922
 MonoBehaviour:
   m_ObjectHideFlags: 0
