@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cfc750e9d29cd342bd4a5387a673768, type: 3}
   m_Name: WatermelonData
   m_EditorClassIdentifier: 
-  Cooldown: 3
-  Speed: 15
+  Cooldown: 2
+  Speed: 10
   Range: 20
   Damage: 3
   LocalPositionOffset: {x: 0, y: 0, z: 0}
@@ -22,5 +22,7 @@ MonoBehaviour:
   HitSound: 8
   SpawnSound: 4
   Attenuation: {x: 5, y: 60}
-  HitParticles: 2
-  SpawnParticles: 3
+  HitParticles: {fileID: 6853366362944525616, guid: 9287f76c20dae0d4b931519a68730411,
+    type: 3}
+  SpawnParticles: {fileID: 8613292636651882567, guid: dad229877b82a474da0dfc3413cb8a4c,
+    type: 3}

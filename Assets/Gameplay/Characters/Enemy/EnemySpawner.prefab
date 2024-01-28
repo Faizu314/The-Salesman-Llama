@@ -283,7 +283,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5521257245597430534}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.67, y: 0.79, z: -2.07}
+  m_LocalPosition: {x: -4.37, y: 0.79, z: 0.91}
   m_LocalScale: {x: 2.5775235, y: 1.5303, z: 3.1046727}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -430,8 +430,8 @@ MonoBehaviour:
   m_barberShopDestination: {fileID: 2810016558702241289}
   m_enemyPrefab: {fileID: 8233289377175853744, guid: 07111c6a7d808414a885bf8474729cc3,
     type: 3}
-  m_delayMin: 1500
-  m_delayMax: 2000
+  m_delayMin: 3000
+  m_delayMax: 5000
 --- !u!1 &6308414899407972826
 GameObject:
   m_ObjectHideFlags: 0

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Cooldown: 0.5
   Speed: 15
-  Range: 10
+  Range: 50
   Damage: 1
   LocalPositionOffset: {x: 0, y: 0, z: 0}
   LocalRotationOffset: {x: 0, y: 0, z: 0, w: 0}
@@ -22,5 +22,7 @@ MonoBehaviour:
   HitSound: 7
   SpawnSound: 3
   Attenuation: {x: 5, y: 60}
-  HitParticles: 0
-  SpawnParticles: 1
+  HitParticles: {fileID: 8613292636651882567, guid: dfecbe5a052ece44bb0e0e733f1c483d,
+    type: 3}
+  SpawnParticles: {fileID: 8613292636651882567, guid: 49ed147c08b789e4ab2c33954e5f4a97,
+    type: 3}
