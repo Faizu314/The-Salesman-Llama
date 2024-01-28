@@ -21,6 +21,7 @@ public class ProjectileData : ScriptableObject
     [Space(5f)]
     [Header("Sound Data")]
     public FModEvents.EventReferenceType HitSound;
+    public FModEvents.EventReferenceType SpawnSound;
 
     [Space(5f)]
     [Header("Particle Data")]
