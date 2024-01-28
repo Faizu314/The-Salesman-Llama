@@ -23,6 +23,8 @@ public class Enemy : MonoBehaviour
     Collider m_collider;
     CancellationTokenSource m_tokenSource;
 
+    private float m_EnemySpeed;
+
     public Transform BarberShopDestination { get; set; }
     public Action<Enemy> reachDestination;
 
@@ -46,14 +48,14 @@ public class Enemy : MonoBehaviour
         m_agent = GetComponent<NavMeshAgent>();
         m_defaultSpeed = m_agent.speed;
         m_maxSpeedAllCharacters *= m_defaultSpeed;
-        float speed = UnityEngine.Random.Range(m_speedMin, m_speedMax);
-        m_agent.speed = speed * m_defaultSpeed;
+        m_EnemySpeed = UnityEngine.Random.Range(m_speedMin, m_speedMax);
         foreach (var character in m_characters)
             character.SetActive(false);
     }
 
     private void OnEnable()
     {
+        m_agent.speed = m_EnemySpeed * m_defaultSpeed;
         m_agent.SetDestination(m_destination);
         if (m_currentCharacter != null)
             m_currentCharacter.SetActive(false);
