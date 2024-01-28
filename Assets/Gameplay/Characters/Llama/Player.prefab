@@ -317,6 +317,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Llama - Phezu
       objectReference: {fileID: 0}
+    - target: {fileID: 8058662232693699227, guid: 3450ea01dbe1c3c43b6e42942625d652,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3450ea01dbe1c3c43b6e42942625d652, type: 3}
 --- !u!114 &4149957881125719949 stripped
