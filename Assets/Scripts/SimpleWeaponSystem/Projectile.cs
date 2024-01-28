@@ -25,7 +25,9 @@ public class Projectile : MonoBehaviour
     public void Shoot(Vector3 position, Vector3 forward, Action<Projectile> onDestroy)
     {
         Debug.Log("Shoot " + gameObject.name, gameObject);
-        AudioManager.Instance.PlayOneShot(FModEvents.Instance.NormalAttack, transform.position);
+
+        var soundEvent = FModEvents.Instance.GetEventReference(m_ProjectileData.SpawnSound);
+        AudioManager.Instance.PlayOneShot(soundEvent, Camera.main.transform.position);
 
         m_collider.enabled = true;
         m_Rb.isKinematic = false;
