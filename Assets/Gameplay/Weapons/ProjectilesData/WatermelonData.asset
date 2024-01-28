@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cfc750e9d29cd342bd4a5387a673768, type: 3}
   m_Name: WatermelonData
   m_EditorClassIdentifier: 
-  Cooldown: 3
-  Speed: 15
+  Cooldown: 2
+  Speed: 10
   Range: 20
   Damage: 3
   LocalPositionOffset: {x: 0, y: 0, z: 0}
