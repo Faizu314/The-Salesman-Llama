@@ -29,9 +29,13 @@ public class BackgroundMusicPlayer : MonoBehaviour
         );
 
         m_Ambience.start();
-        m_Music.start();
 
+        GameManager.Instance.gameStarted += PlayBackgroundMusic;
         GameManager.Instance.gameOvered += OnGameOver;
+    }
+
+    private void PlayBackgroundMusic() {
+        m_Music.start();
     }
 
     private void OnGameOver(bool success)
