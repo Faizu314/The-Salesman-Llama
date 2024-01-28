@@ -14,6 +14,17 @@ public class AudioManager : Singleton<AudioManager> {
         RuntimeManager.PlayOneShot(sound, worldPos);
     }
 
+    public void PlayOneShotWithParameters(EventReference sound, Vector3 position, float minDist, float maxDist) {
+        EventInstance instance = RuntimeManager.CreateInstance(sound);
+
+        instance.setProperty(EVENT_PROPERTY.MINIMUM_DISTANCE, minDist);
+        instance.setProperty(EVENT_PROPERTY.MAXIMUM_DISTANCE, maxDist);
+
+        instance.set3DAttributes(position.To3DAttributes());
+        instance.start();
+        instance.release();
+    }
+
     public EventInstance CreateInstance(EventReference eventReference) {
         EventInstance instance = RuntimeManager.CreateInstance(eventReference);
         m_EventInstances.Add(instance);
