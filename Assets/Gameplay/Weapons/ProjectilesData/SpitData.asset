@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Cooldown: 0.5
   Speed: 15
-  Range: 10
+  Range: 50
   Damage: 1
   LocalPositionOffset: {x: 0, y: 0, z: 0}
   LocalRotationOffset: {x: 0, y: 0, z: 0, w: 0}
