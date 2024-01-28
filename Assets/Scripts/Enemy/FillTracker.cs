@@ -18,7 +18,11 @@ public class FillTracker : MonoBehaviour
         if (currentValue >= m_maxValue)
         {
             currentValue = m_maxValue;
-            if (GameManager.Instance.IsInGame) reachedMax?.Invoke();
+            if (GameManager.Instance.IsInGame)
+            {
+                reachedMax?.Invoke();
+                AudioManager.Instance.PlayOneShot(FModEvents.Instance.EarnMoney, transform.position);
+            }
         }
 
         m_wetBarUI.UpdateFillBar(currentValue, m_maxValue);

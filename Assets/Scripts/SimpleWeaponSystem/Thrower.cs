@@ -6,7 +6,6 @@ public class Thrower : MonoBehaviour
 {
 
     [SerializeField] private Transform m_SpitStartPoint;
-    [SerializeField] private Animator m_animator;
     [SerializeField] private Projectile m_SpitPrefab;
 
     private ObjectPool<Projectile> m_SpitPool;
@@ -38,7 +37,6 @@ public class Thrower : MonoBehaviour
         if (!m_CanSpit)
             return;
 
-        m_animator.SetBool("Throw", false);
         var proj = m_SpitPool.Get();
 
         proj.Shoot(m_SpitStartPoint.position, m_SpitStartPoint.forward, OnProjectileDestroyed);

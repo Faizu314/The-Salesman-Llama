@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
     public bool IsInGame => m_isInGame;
 
     public Action gameStarted;
-    public Action gameOvered;
+    public Action<bool> gameOvered;
 
     float m_timeLeft;
     bool m_isInGame;
@@ -38,12 +38,17 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         m_isInGame = false;
-        gameOvered?.Invoke();
-        Debug.Log($"{OverlayUI.Instance.CurrentMoney} {m_gameSettings.MoneyGoal}");
+
         if (OverlayUI.Instance.CurrentMoney >= m_gameSettings.MoneyGoal)
+        {
             UIManager.Instance.TransitionToScreen(UIScreen.GameOverWinMenu);
+            gameOvered?.Invoke(true);
+        }
         else
+        {
             UIManager.Instance.TransitionToScreen(UIScreen.GameOverFailMenu);
+            gameOvered?.Invoke(false);
+        }
     }
 
     private async UniTaskVoid GameCountdown()
