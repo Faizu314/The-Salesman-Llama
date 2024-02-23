@@ -207,14 +207,286 @@ MonoBehaviour:
   m_maxSpeedAllCharacters: 0
   m_moneyToEarn: 0
   m_characters:
-  - {fileID: 8590356712364863249}
-  - {fileID: 786223665561491287}
-  - {fileID: 9216661380628109728}
-  - {fileID: 5359850493993193465}
-  - {fileID: 3711172657417328019}
-  - {fileID: 1691942882918407002}
-  - {fileID: 1492318361083420189}
-  - {fileID: 8815991365555438669}
+  - entity: {fileID: 8590356712364863249}
+    onHitNormalSFX:
+      clip: {fileID: 8300000, guid: 68fcc8db5e7c940449a60a2fd38c1b3d, type: 3}
+      mixerGroup: {fileID: 24300002, guid: a432ec6679a38374dab00972af679b67, type: 2}
+      volume: 1
+      pitch: 1
+      maxVolumeDistance: 15
+      minVolumeDistance: 50
+      pitchVariance: 0.2
+      isLooping: 0
+      fadeOnCancel: 0
+      fadeDuration: 0
+      fadeOutCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    onHitSpecialSFX:
+      clip: {fileID: 8300000, guid: 162521d06f9d69c49af84d30002d0e3b, type: 3}
+      mixerGroup: {fileID: 24300002, guid: a432ec6679a38374dab00972af679b67, type: 2}
+      volume: 1
+      pitch: 1
+      maxVolumeDistance: 15
+      minVolumeDistance: 50
+      pitchVariance: 0.1
+      isLooping: 0
+      fadeOnCancel: 0
+      fadeDuration: 0
+      fadeOutCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+  - entity: {fileID: 786223665561491287}
+    onHitNormalSFX:
+      clip: {fileID: 8300000, guid: 859ec3ff1c7552844aab2a6d69f7a548, type: 3}
+      mixerGroup: {fileID: 24300002, guid: a432ec6679a38374dab00972af679b67, type: 2}
+      volume: 1
+      pitch: 1
+      maxVolumeDistance: 15
+      minVolumeDistance: 50
+      pitchVariance: 0.1
+      isLooping: 0
+      fadeOnCancel: 0
+      fadeDuration: 0
+      fadeOutCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    onHitSpecialSFX:
+      clip: {fileID: 8300000, guid: 335bc4dbdd99b43409caa4900788297b, type: 3}
+      mixerGroup: {fileID: 24300002, guid: a432ec6679a38374dab00972af679b67, type: 2}
+      volume: 1
+      pitch: 1
+      maxVolumeDistance: 15
+      minVolumeDistance: 50
+      pitchVariance: 0.1
+      isLooping: 0
+      fadeOnCancel: 0
+      fadeDuration: 0
+      fadeOutCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+  - entity: {fileID: 9216661380628109728}
+    onHitNormalSFX:
+      clip: {fileID: 8300000, guid: d11029c64a2d699499855a2cdff8c7c4, type: 3}
+      mixerGroup: {fileID: 24300002, guid: a432ec6679a38374dab00972af679b67, type: 2}
+      volume: 1
+      pitch: 1
+      maxVolumeDistance: 15
+      minVolumeDistance: 50
+      pitchVariance: 0.1
+      isLooping: 0
+      fadeOnCancel: 0
+      fadeDuration: 0
+      fadeOutCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    onHitSpecialSFX:
+      clip: {fileID: 8300000, guid: 0effe487c00464943b19ef6dee29f014, type: 3}
+      mixerGroup: {fileID: 24300002, guid: a432ec6679a38374dab00972af679b67, type: 2}
+      volume: 1
+      pitch: 1
+      maxVolumeDistance: 15
+      minVolumeDistance: 50
+      pitchVariance: 0.1
+      isLooping: 0
+      fadeOnCancel: 0
+      fadeDuration: 0
+      fadeOutCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+  - entity: {fileID: 5359850493993193465}
+    onHitNormalSFX:
+      clip: {fileID: 8300000, guid: 41b1fc1ec05323f408bd266530586fc0, type: 3}
+      mixerGroup: {fileID: 24300002, guid: a432ec6679a38374dab00972af679b67, type: 2}
+      volume: 1
+      pitch: 1
+      maxVolumeDistance: 15
+      minVolumeDistance: 50
+      pitchVariance: 0.1
+      isLooping: 0
+      fadeOnCancel: 0
+      fadeDuration: 0
+      fadeOutCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    onHitSpecialSFX:
+      clip: {fileID: 8300000, guid: 46763d514aa597248bc36c83b238639d, type: 3}
+      mixerGroup: {fileID: 24300002, guid: a432ec6679a38374dab00972af679b67, type: 2}
+      volume: 1
+      pitch: 1
+      maxVolumeDistance: 15
+      minVolumeDistance: 50
+      pitchVariance: 0.1
+      isLooping: 0
+      fadeOnCancel: 0
+      fadeDuration: 0
+      fadeOutCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+  - entity: {fileID: 3711172657417328019}
+    onHitNormalSFX:
+      clip: {fileID: 8300000, guid: 08aaa186ade60c748a92728290c9ce3b, type: 3}
+      mixerGroup: {fileID: 24300002, guid: a432ec6679a38374dab00972af679b67, type: 2}
+      volume: 1
+      pitch: 1
+      maxVolumeDistance: 15
+      minVolumeDistance: 50
+      pitchVariance: 0.1
+      isLooping: 0
+      fadeOnCancel: 0
+      fadeDuration: 0
+      fadeOutCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    onHitSpecialSFX:
+      clip: {fileID: 8300000, guid: 644081829995be64882e9636c4f9488c, type: 3}
+      mixerGroup: {fileID: 24300002, guid: a432ec6679a38374dab00972af679b67, type: 2}
+      volume: 1
+      pitch: 1
+      maxVolumeDistance: 15
+      minVolumeDistance: 50
+      pitchVariance: 0.1
+      isLooping: 0
+      fadeOnCancel: 0
+      fadeDuration: 0
+      fadeOutCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+  - entity: {fileID: 1691942882918407002}
+    onHitNormalSFX:
+      clip: {fileID: 8300000, guid: bf11ee8fade038642b3839636828af15, type: 3}
+      mixerGroup: {fileID: 24300002, guid: a432ec6679a38374dab00972af679b67, type: 2}
+      volume: 1
+      pitch: 1
+      maxVolumeDistance: 15
+      minVolumeDistance: 50
+      pitchVariance: 0.1
+      isLooping: 0
+      fadeOnCancel: 0
+      fadeDuration: 0
+      fadeOutCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    onHitSpecialSFX:
+      clip: {fileID: 8300000, guid: 6eabccb6d3c287d4e9e8c95e7ff27329, type: 3}
+      mixerGroup: {fileID: 24300002, guid: a432ec6679a38374dab00972af679b67, type: 2}
+      volume: 1
+      pitch: 1
+      maxVolumeDistance: 15
+      minVolumeDistance: 50
+      pitchVariance: 0.1
+      isLooping: 0
+      fadeOnCancel: 0
+      fadeDuration: 0
+      fadeOutCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+  - entity: {fileID: 1492318361083420189}
+    onHitNormalSFX:
+      clip: {fileID: 8300000, guid: 499c2a2f0f7e0c045b29b9636d37c08f, type: 3}
+      mixerGroup: {fileID: 24300002, guid: a432ec6679a38374dab00972af679b67, type: 2}
+      volume: 1
+      pitch: 1
+      maxVolumeDistance: 15
+      minVolumeDistance: 50
+      pitchVariance: 0.1
+      isLooping: 0
+      fadeOnCancel: 0
+      fadeDuration: 0
+      fadeOutCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    onHitSpecialSFX:
+      clip: {fileID: 8300000, guid: 634b7808fb6941b47954688a5a2a5ecd, type: 3}
+      mixerGroup: {fileID: 24300002, guid: a432ec6679a38374dab00972af679b67, type: 2}
+      volume: 1
+      pitch: 1
+      maxVolumeDistance: 15
+      minVolumeDistance: 50
+      pitchVariance: 0.1
+      isLooping: 0
+      fadeOnCancel: 0
+      fadeDuration: 0
+      fadeOutCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+  - entity: {fileID: 8815991365555438669}
+    onHitNormalSFX:
+      clip: {fileID: 8300000, guid: 139a8e6ac72278947b381e23a6adebb5, type: 3}
+      mixerGroup: {fileID: 24300002, guid: a432ec6679a38374dab00972af679b67, type: 2}
+      volume: 1
+      pitch: 1
+      maxVolumeDistance: 15
+      minVolumeDistance: 50
+      pitchVariance: 0.1
+      isLooping: 0
+      fadeOnCancel: 0
+      fadeDuration: 0
+      fadeOutCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    onHitSpecialSFX:
+      clip: {fileID: 8300000, guid: 59ff6f4234ab4f24e9e585ad1dd949c2, type: 3}
+      mixerGroup: {fileID: 24300002, guid: a432ec6679a38374dab00972af679b67, type: 2}
+      volume: 1
+      pitch: 1
+      maxVolumeDistance: 15
+      minVolumeDistance: 50
+      pitchVariance: 0.1
+      isLooping: 0
+      fadeOnCancel: 0
+      fadeDuration: 0
+      fadeOutCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
 --- !u!136 &7577223230189448805
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -243,6 +515,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_wetBarUI: {fileID: 2781244752003046243}
   m_maxValue: 0
+  m_earnMoneySFX:
+    clip: {fileID: 8300000, guid: eba7000f9a4217c4c8102b3fa37f28ad, type: 3}
+    mixerGroup: {fileID: 24300002, guid: a432ec6679a38374dab00972af679b67, type: 2}
+    volume: 1
+    pitch: 1
+    maxVolumeDistance: 1
+    minVolumeDistance: 8
+    pitchVariance: 0.1
+    isLooping: 0
+    fadeOnCancel: 0
+    fadeDuration: 0
+    fadeOutCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
 --- !u!1 &3006069147004286097
 GameObject:
   m_ObjectHideFlags: 0

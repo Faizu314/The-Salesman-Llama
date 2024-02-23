@@ -8,6 +8,7 @@ public class Thrower : MonoBehaviour
     [SerializeField] private Transform m_SpitStartPoint;
     [SerializeField] private Projectile m_SpitPrefab;
     [SerializeField] private SpitIndicator m_indicatorUI;
+    [SerializeField] private AudioPlayer.PlayNonSpatializedInput m_coolDownSFX;
 
     private ObjectPool<Projectile> m_SpitPool;
     private bool m_CanSpit = true;
@@ -64,6 +65,6 @@ public class Thrower : MonoBehaviour
 
     private void OnCooldown()
     {
-        AudioManager.Instance.PlayOneShot(FModEvents.Instance.CoolDownNormal, transform.position);
+        AudioPlayer.PlayNonSpatialized(m_coolDownSFX);
     }
 }

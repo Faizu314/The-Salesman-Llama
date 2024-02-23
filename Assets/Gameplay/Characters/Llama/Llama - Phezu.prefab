@@ -523,6 +523,23 @@ MonoBehaviour:
   m_SpitPrefab: {fileID: 1396473667168904681, guid: ea54653d572baed4aab99b0f9cb60ac5,
     type: 3}
   m_indicatorUI: {fileID: 4504761775971793972}
+  m_coolDownSFX:
+    clip: {fileID: 8300000, guid: 9487f70d6ada0b84690bf01f280b910e, type: 3}
+    mixerGroup: {fileID: 24300002, guid: a432ec6679a38374dab00972af679b67, type: 2}
+    volume: 1
+    pitch: 1
+    maxVolumeDistance: 1
+    minVolumeDistance: 8
+    pitchVariance: 0.2
+    isLooping: 0
+    fadeOnCancel: 0
+    fadeDuration: 0
+    fadeOutCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
 --- !u!114 &7193178619153184345
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -542,6 +559,23 @@ MonoBehaviour:
     type: 3}
   m_animationListener: {fileID: 1408719072393891843}
   m_indicatorUI: {fileID: 3456563980322069068}
+  m_coolDownSFX:
+    clip: {fileID: 8300000, guid: 288bc4d397d708b4e8a2f7ccf4c15034, type: 3}
+    mixerGroup: {fileID: 24300002, guid: a432ec6679a38374dab00972af679b67, type: 2}
+    volume: 1
+    pitch: 1
+    maxVolumeDistance: 1
+    minVolumeDistance: 8
+    pitchVariance: 0.2
+    isLooping: 0
+    fadeOnCancel: 0
+    fadeDuration: 0
+    fadeOutCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
 --- !u!1 &8189988996264924957
 GameObject:
   m_ObjectHideFlags: 0

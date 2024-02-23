@@ -19,8 +19,20 @@ MonoBehaviour:
   LocalPositionOffset: {x: 0, y: 0, z: 0}
   LocalRotationOffset: {x: 0, y: 0, z: 0, w: 0}
   Icon: {fileID: 0}
-  HitSound: 7
-  SpawnSound: 3
+  HitSound:
+    clip: {fileID: 0}
+    mixerGroup: {fileID: 0}
+    volume: 1
+    pitch: 1
+    pitchVariance: 0
+    isLooping: 0
+  SpawnSound:
+    clip: {fileID: 8300000, guid: 94f10c3e2c2bf4347a3da552e9329c22, type: 3}
+    mixerGroup: {fileID: 24300002, guid: a432ec6679a38374dab00972af679b67, type: 2}
+    volume: 1
+    pitch: 1
+    pitchVariance: 0.1
+    isLooping: 0
   Attenuation: {x: 5, y: 60}
   HitParticles: {fileID: 8613292636651882567, guid: dfecbe5a052ece44bb0e0e733f1c483d,
     type: 3}

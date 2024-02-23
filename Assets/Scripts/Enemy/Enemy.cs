@@ -7,17 +7,25 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
+[Serializable]
+public struct EnemyEntity
+{
+    public GameObject entity;
+    public AudioPlayer.PlayAtPointInput onHitNormalSFX;
+    public AudioPlayer.PlayAtPointInput onHitSpecialSFX;
+}
+
 public class Enemy : MonoBehaviour
 {
     [SerializeField] float m_speedMin;
     [SerializeField] float m_speedMax;
     [SerializeField] float m_maxSpeedAllCharacters;
     [SerializeField] int m_moneyToEarn;
-    [SerializeField] GameObject[] m_characters;
+    [SerializeField] EnemyEntity[] m_characters;
     NavMeshAgent m_agent;
     Vector3 m_destination;
     float m_defaultSpeed;
-    GameObject m_currentCharacter;
+    EnemyEntity m_currentCharacter;
     Animator m_animator;
     FillTracker m_fillTracker;
     Collider m_collider;
@@ -40,6 +48,12 @@ public class Enemy : MonoBehaviour
         m_fillTracker.AddValue(damage);
     }
 
+    public void PlayOnHitSFX(bool isSpecial)
+    {
+        if (isSpecial) AudioPlayer.PlayAtPoint(transform.position, m_currentCharacter.onHitSpecialSFX);
+        else AudioPlayer.PlayAtPoint(transform.position, m_currentCharacter.onHitNormalSFX);
+    }
+
     private void Awake()
     {
         m_collider = GetComponent<Collider>();
@@ -50,20 +64,20 @@ public class Enemy : MonoBehaviour
         m_maxSpeedAllCharacters *= m_defaultSpeed;
         m_EnemySpeed = UnityEngine.Random.Range(m_speedMin, m_speedMax);
         foreach (var character in m_characters)
-            character.SetActive(false);
+            character.entity.SetActive(false);
     }
 
     private void OnEnable()
     {
         m_agent.speed = m_EnemySpeed * m_defaultSpeed;
         m_agent.SetDestination(m_destination);
-        if (m_currentCharacter != null)
-            m_currentCharacter.SetActive(false);
+        if (m_currentCharacter.entity != null)
+            m_currentCharacter.entity.SetActive(false);
 
         m_currentCharacter = m_characters[UnityEngine.Random.Range(0, m_characters.Length)];
-        m_currentCharacter.SetActive(true);
+        m_currentCharacter.entity.SetActive(true);
         m_collider.enabled = true;
-        m_animator = m_currentCharacter.GetComponent<Animator>();
+        m_animator = m_currentCharacter.entity.GetComponent<Animator>();
         m_fillTracker.ResetValue();
     }
 

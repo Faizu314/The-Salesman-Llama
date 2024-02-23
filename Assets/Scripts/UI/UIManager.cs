@@ -9,6 +9,8 @@ public class UIManager : MonoBehaviour
     public static UIManager Instance;
     [SerializeField] UIScreen m_startScreen;
     [SerializeField] UIBase[] m_screens;
+    [SerializeField] AudioPlayer.PlayNonSpatializedInput m_buttonClickSFX;
+    [SerializeField] AudioPlayer.PlayNonSpatializedInput m_buttonHoverSFX;
 
     UIBase currentScreen;
 
@@ -48,12 +50,12 @@ public class UIManager : MonoBehaviour
 
     public void PlayButtonClickSFX()
     {
-        AudioManager.Instance.PlayOneShot(FModEvents.Instance.ButtonClick, Vector3.zero);
+        AudioPlayer.PlayNonSpatialized(m_buttonClickSFX);
     }
 
     public void PlayButtonHoverSFX()
     {
-        AudioManager.Instance.PlayOneShot(FModEvents.Instance.ButtonHover, Vector3.zero);
+        AudioPlayer.PlayNonSpatialized(m_buttonHoverSFX);
     }
 
     public void ExitGame()

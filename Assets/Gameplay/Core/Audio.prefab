@@ -9,8 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9131852911477258272}
-  - component: {fileID: 4348643252959879920}
-  - component: {fileID: 4997653228427214922}
+  - component: {fileID: 2127903185554225394}
   m_Layer: 0
   m_Name: Audio
   m_TagString: Untagged
@@ -33,7 +32,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4348643252959879920
+--- !u!114 &2127903185554225394
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -42,137 +41,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 2042311080166733838}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 36fe738a0956f954f80931a081657021, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <Ambience>k__BackingField:
-    Guid:
-      Data1: -1715973163
-      Data2: 1076659581
-      Data3: 2067455135
-      Data4: 1316257639
-    Path: event:/Ambiences/Ambience
-  <MainMenuTheme>k__BackingField:
-    Guid:
-      Data1: 1681977960
-      Data2: 1293907059
-      Data3: -293593444
-      Data4: -1741025927
-    Path: event:/Music/Main_Menu_Theme
-  <BackgroundMusic>k__BackingField:
-    Guid:
-      Data1: 92814742
-      Data2: 1101202904
-      Data3: -1451942755
-      Data4: -1368471137
-    Path: event:/Music/Back_Ground_Music
-  <NormalAttack>k__BackingField:
-    Guid:
-      Data1: -147085281
-      Data2: 1266203447
-      Data3: -509636716
-      Data4: -1447786932
-    Path: event:/SFX/Normal_Atack
-  <SpecialAttack>k__BackingField:
-    Guid:
-      Data1: 830259513
-      Data2: 1106167843
-      Data3: -1516259454
-      Data4: -1882781587
-    Path: event:/SFX/Special_Atack
-  <CoolDownNormal>k__BackingField:
-    Guid:
-      Data1: -1474424397
-      Data2: 1320247516
-      Data3: 251464072
-      Data4: -1024668394
-    Path: event:/SFX/Cool_Down_Normal
-  <CoolDownSpecial>k__BackingField:
-    Guid:
-      Data1: -1892082741
-      Data2: 1107796977
-      Data3: -1891773533
-      Data4: 2004003080
-    Path: event:/SFX/Cool_Down_Special
-  <HitTargetNormal>k__BackingField:
-    Guid:
-      Data1: 1860160892
-      Data2: 1083415151
-      Data3: 530666419
-      Data4: 1705365121
-    Path: event:/SFX/Hit_Target_Normal
-  <HitTargetSpecial>k__BackingField:
-    Guid:
-      Data1: -408755722
-      Data2: 1255203195
-      Data3: 1417277068
-      Data4: 1787926708
-    Path: event:/SFX/Hit_Target_Special
-  <EarnMoney>k__BackingField:
-    Guid:
-      Data1: -1686292140
-      Data2: 1248345099
-      Data3: -255964271
-      Data4: 812429776
-    Path: event:/SFX/Earn_Money
-  <StartMatchCountDown>k__BackingField:
-    Guid:
-      Data1: -919179903
-      Data2: 1085447920
-      Data3: 201758867
-      Data4: 869887992
-    Path: event:/SFX/Start_Match_Count_Down
-  <EndLastSeconds>k__BackingField:
-    Guid:
-      Data1: -643108597
-      Data2: 1255278199
-      Data3: 1537522869
-      Data4: 205113433
-    Path: event:/SFX/End_Last_Seconds
-  <WinMatch>k__BackingField:
-    Guid:
-      Data1: -1676020886
-      Data2: 1312424502
-      Data3: 931755648
-      Data4: -93766961
-    Path: event:/SFX/Win_Match
-  <LoseMatch>k__BackingField:
-    Guid:
-      Data1: -1388654254
-      Data2: 1300686475
-      Data3: 597206207
-      Data4: -1706756314
-    Path: event:/SFX/Lose_Match
-  <ScreamLlama>k__BackingField:
-    Guid:
-      Data1: -1097434236
-      Data2: 1235411831
-      Data3: 528087433
-      Data4: 1125145802
-    Path: event:/SFX/Scream_Lama
-  <ButtonClick>k__BackingField:
-    Guid:
-      Data1: -1967981566
-      Data2: 1168582980
-      Data3: 346594442
-      Data4: -1669635190
-    Path: event:/UI/ButtonClick
-  <ButtonHover>k__BackingField:
-    Guid:
-      Data1: 348631979
-      Data2: 1262796966
-      Data3: 489113999
-      Data4: -1968359638
-    Path: event:/UI/ButtonHover
---- !u!114 &4997653228427214922
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2042311080166733838}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63e578f8f41776e4188f7f90d0213714, type: 3}
+  m_Script: {fileID: 11500000, guid: 49021937c11f35744ada0324289d1a80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

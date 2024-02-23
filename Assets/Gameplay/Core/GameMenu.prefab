@@ -1438,6 +1438,20 @@ MonoBehaviour:
   - {fileID: 2040618113998493478}
   - {fileID: 6905138343499400788}
   - {fileID: 3226535873146553135}
+  m_buttonClickSFX:
+    clip: {fileID: 8300000, guid: 086bff4331fae8a47a86dea3bc089fc1, type: 3}
+    mixerGroup: {fileID: 24300002, guid: a432ec6679a38374dab00972af679b67, type: 2}
+    volume: 1
+    pitch: 1
+    pitchVariance: 0
+    isLooping: 0
+  m_buttonHoverSFX:
+    clip: {fileID: 8300000, guid: 8be9b3814603f1a4485acc14ed6f90aa, type: 3}
+    mixerGroup: {fileID: 24300002, guid: a432ec6679a38374dab00972af679b67, type: 2}
+    volume: 1
+    pitch: 1
+    pitchVariance: 0
+    isLooping: 0
 --- !u!1 &5516079383195201554
 GameObject:
   m_ObjectHideFlags: 0

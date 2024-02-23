@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cfc750e9d29cd342bd4a5387a673768, type: 3}
   m_Name: WatermelonData
   m_EditorClassIdentifier: 
+  IsSpecial: 1
   Cooldown: 2
   Speed: 10
   Range: 20
@@ -19,8 +20,13 @@ MonoBehaviour:
   LocalPositionOffset: {x: 0, y: 0, z: 0}
   LocalRotationOffset: {x: 0, y: 0, z: 0, w: 0}
   Icon: {fileID: 21300022, guid: 37607ec1aab56e349af84a980f685a4b, type: 3}
-  HitSound: 8
-  SpawnSound: 4
+  SpawnSound:
+    clip: {fileID: 8300000, guid: 8a133a2e1be45a94baea561b4ed950df, type: 3}
+    mixerGroup: {fileID: 24300002, guid: a432ec6679a38374dab00972af679b67, type: 2}
+    volume: 1
+    pitch: 1
+    pitchVariance: 0.1
+    isLooping: 0
   Attenuation: {x: 5, y: 60}
   HitParticles: {fileID: 6853366362944525616, guid: 9287f76c20dae0d4b931519a68730411,
     type: 3}

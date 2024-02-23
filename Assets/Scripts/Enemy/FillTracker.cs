@@ -7,6 +7,7 @@ public class FillTracker : MonoBehaviour
 {
     [SerializeField] WetBarUI m_wetBarUI;
     [SerializeField] float m_maxValue;
+    [SerializeField] AudioPlayer.PlayAtPointInput m_earnMoneySFX;
 
     public Action reachedMax;
 
@@ -21,7 +22,7 @@ public class FillTracker : MonoBehaviour
             if (GameManager.Instance.IsInGame)
             {
                 reachedMax?.Invoke();
-                AudioManager.Instance.PlayOneShot(FModEvents.Instance.EarnMoney, transform.position);
+                AudioPlayer.PlayAtPoint(transform.position, m_earnMoneySFX);
             }
         }
 

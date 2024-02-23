@@ -11,6 +11,7 @@ public class SpecialThrower : MonoBehaviour
     [SerializeField] private SpecialProjectile m_SpecialProjectilePrefab;
     [SerializeField] private PlayerAnimationListener m_animationListener;
     [SerializeField] private SpecialAttackInicatorUI m_indicatorUI;
+    [SerializeField] private AudioPlayer.PlayNonSpatializedInput m_coolDownSFX;
 
     private ObjectPool<SpecialProjectile> m_SpecialProjectilesPool;
     private SpecialProjectile m_LoadedProjectile;
@@ -50,7 +51,7 @@ public class SpecialThrower : MonoBehaviour
     {
         m_CanThrow = true;
         m_LoadedProjectile = m_SpecialProjectilesPool.Get();
-        AudioManager.Instance.PlayOneShot(FModEvents.Instance.CoolDownSpecial, transform.position);
+        AudioPlayer.PlayNonSpatialized(m_coolDownSFX);
     }
 
     private void LoadSpecialAttack()

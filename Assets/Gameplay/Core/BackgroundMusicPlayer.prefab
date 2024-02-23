@@ -44,3 +44,52 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3c022dc527d648499680cd202a73bbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_ambience:
+    clip: {fileID: 8300000, guid: 8f5fac24a7d198645914e9ccfce10ef3, type: 3}
+    mixerGroup: {fileID: 24300002, guid: a432ec6679a38374dab00972af679b67, type: 2}
+    volume: 1
+    pitch: 1
+    pitchVariance: 0
+    isLooping: 1
+  m_music:
+    clip: {fileID: 8300000, guid: 3eee3673e2c7c5540b13e368740879e9, type: 3}
+    mixerGroup: {fileID: 24300002, guid: a432ec6679a38374dab00972af679b67, type: 2}
+    volume: 0.5
+    pitch: 1
+    pitchVariance: 0
+    isLooping: 1
+  m_menuMusic:
+    clip: {fileID: 8300000, guid: 38c036cb76558f94a84b70d4fdb0551d, type: 3}
+    mixerGroup: {fileID: 24300002, guid: a432ec6679a38374dab00972af679b67, type: 2}
+    volume: 1
+    pitch: 1
+    pitchVariance: 0
+    isLooping: 1
+  m_winSound:
+    clip: {fileID: 8300000, guid: ad149e7dfc7363b4fb8c334dc0beaaa1, type: 3}
+    mixerGroup: {fileID: 24300002, guid: a432ec6679a38374dab00972af679b67, type: 2}
+    volume: 1
+    pitch: 1
+    pitchVariance: 0
+    isLooping: 0
+  m_failSound:
+    clip: {fileID: 8300000, guid: 3c71d61c020122b49b54850767ac1fdc, type: 3}
+    mixerGroup: {fileID: 24300002, guid: a432ec6679a38374dab00972af679b67, type: 2}
+    volume: 1
+    pitch: 1
+    pitchVariance: 0
+    isLooping: 0
+  m_gameStartCountdownStartSound:
+    clip: {fileID: 8300000, guid: d3703fd963fab7f418b00af9370c8ee3, type: 3}
+    mixerGroup: {fileID: 24300002, guid: a432ec6679a38374dab00972af679b67, type: 2}
+    volume: 1
+    pitch: 1
+    pitchVariance: 0
+    isLooping: 0
+  m_gameOverCountdownStartedSound:
+    clip: {fileID: 8300000, guid: 560aace4820d1934da286a3930e65a61, type: 3}
+    mixerGroup: {fileID: 24300002, guid: a432ec6679a38374dab00972af679b67, type: 2}
+    volume: 1
+    pitch: 1
+    pitchVariance: 0
+    isLooping: 0

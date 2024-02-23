@@ -3,6 +3,8 @@
 [CreateAssetMenu(menuName = "Scriptables/Projectiles", fileName = "Projectile")]
 public class ProjectileData : ScriptableObject
 {
+    public bool IsSpecial;
+
     [Header("Shoot Data")]
     public float Cooldown;
     public float Speed;
@@ -20,8 +22,7 @@ public class ProjectileData : ScriptableObject
 
     [Space(5f)]
     [Header("Sound Data")]
-    public FModEvents.EventReferenceType HitSound;
-    public FModEvents.EventReferenceType SpawnSound;
+    public AudioPlayer.PlayNonSpatializedInput SpawnSound;
     public Vector2 Attenuation;
 
     [Space(5f)]
